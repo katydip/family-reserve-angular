@@ -8,16 +8,11 @@ import { RouterModule }   from '@angular/router';
 import { AgmCoreModule } from '@agm/core';
 
 import { AppComponent } from './app.component';
-// import { FlickrComponent } from './flickr/flickr.component';
-
-// import { FlickrService } from './flickr.service';
-
 
 
 @NgModule({
   declarations: [
-    AppComponent,
-    // FlickrComponent
+    AppComponent
   ],
   imports: [
     BrowserModule,

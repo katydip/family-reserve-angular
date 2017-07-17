@@ -1,19 +1,38 @@
-<div style="text-align:center">
-  <h1>
-    Welcome to {{title}}!!
-  </h1>
-</div>
+<!--<div style="text-align:center">
+
 <h1>{{ title }}</h1>
+</div>-->
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">{{ title }}</a>
+    </div>
+  </div>
+</nav>
 
 <!-- this creates a google map on the page with the given lat/lng from -->
 <!-- the component as the initial center of the map: -->
 <agm-map [latitude]="lat" [longitude]="lng">
   <agm-marker [latitude]="lat" [longitude]="lng"></agm-marker>
 </agm-map>
-<div class="jumbotron">
-  <div class="container">
-   
-<!--<app-flickr> flickr works! </app-flickr>-->
 
- </div>
+
+<div class="container">
+  <div class="row">
+    <input type="search" [formControl]="searchControl">
+  </div>
+  <div class="row">
+    <div *ngFor="let photo of photos">
+      <div class="col s4">
+        <div class="card">
+          <div class="card-image">
+            <img src={{photo.url}}>
+            <span class="card-title">{{photo.title}}</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
+
+
