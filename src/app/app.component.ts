@@ -20,7 +20,8 @@ export class AppComponent implements OnInit {
   lat: number = 51.678418;
   lng: number = 7.809007;
 
-    searchControl = new FormControl();
+  searchControl = new FormControl();
+  searchStr:string="";
 
   model$: Observable<any>;
   photos: Object;
@@ -28,14 +29,25 @@ export class AppComponent implements OnInit {
 
 }
 
-  ngOnInit() {
+  // ngOnInit() {
+  //   this.searchControl.valueChanges
+  //     .debounceTime(500)
+  //     .distinctUntilChanged()
+  //     .switchMap((query: string) => this._flickrService.getResult(query))
+  //     .subscribe(value => {
+  //       this.photos = value;
+  //     });
+  // }
+  // attempt to change from query to user_id
+    ngOnInit() {
     this.searchControl.valueChanges
       .debounceTime(500)
       .distinctUntilChanged()
-      .switchMap((query: string) => this._flickrService.getResult(query))
+      .switchMap((user_id) => this._flickrService.getPhotoSet())
       .subscribe(value => {
         this.photos = value;
       });
   }
+
 }
 

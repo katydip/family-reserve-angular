@@ -6,13 +6,16 @@ import { HttpModule } from '@angular/http';
 import { FormsModule }   from '@angular/forms';
 import { RouterModule }   from '@angular/router';
 import { AgmCoreModule } from '@agm/core';
+import {ImageUploadModule} from "angular2-image-upload";
 
 import { AppComponent } from './app.component';
+import { NavigationComponent } from './navigation/navigation.component';
 
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    NavigationComponent
   ],
   imports: [
     BrowserModule,
@@ -23,7 +26,9 @@ import { AppComponent } from './app.component';
     FormsModule,
     AgmCoreModule.forRoot({
       apiKey: 'AIzaSyBbSfE0t3tuzdiOtarHlBrkgHNMjeOQGEY'
-    })
+    }),
+    ImageUploadModule.forRoot()
+
   ],
   providers: [],
   entryComponents: [AppComponent],

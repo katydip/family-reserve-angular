@@ -1,14 +1,5 @@
-<!--<div style="text-align:center">
+<app-navigation></app-navigation>
 
-<h1>{{ title }}</h1>
-</div>-->
-<nav class="navbar navbar-default">
-  <div class="container-fluid">
-    <div class="navbar-header">
-      <a class="navbar-brand" href="#">{{ title }}</a>
-    </div>
-  </div>
-</nav>
 
 <!-- this creates a google map on the page with the given lat/lng from -->
 <!-- the component as the initial center of the map: -->
@@ -19,20 +10,35 @@
 
 <div class="container">
   <div class="row">
-    <input type="search" [formControl]="searchControl">
+    <input type="search" [formControl]="searchControl"> 
+    <!--<input type="text" [(ngModel)]="searchStr" ><button (click)="searchPhoto()">Search</button>-->
   </div>
   <div class="row">
     <div *ngFor="let photo of photos">
-      <div class="col s4">
-        <div class="card">
-          <div class="card-image">
+      <div class="col-xs-6 col-md-3">
+          <div class="thumbnail">
             <img src={{photo.url}}>
             <span class="card-title">{{photo.title}}</span>
           </div>
-        </div>
       </div>
     </div>
   </div>
 </div>
 
+<!--https://www.npmjs.com/package/angular2-image-upload-->
+<image-upload
+  [max]="100"
+  [url]="'example.com/images/upload'"
+  [headers]="[
+    {header: 'Authorization', value: 'MyToken'}
+  ]"
+  [buttonCaption]="'Select Photos!'"
+  [dropBoxMessage]="'Drag and drop your photos here!'"
+  [extensions]="['jpg','png','gif']"
+  (onFileUploadFinish)="imageUploaded($event)"
+  (onRemove)="imageRemoved($event)"
+  (isPending)="disableSendButton($event)"
+></image-upload>
 
+<input type="file" (change)="fileChangeEvent($event)" placeholder="Upload file..." />
+<button type="button" (click)="upload()">Upload</button>
