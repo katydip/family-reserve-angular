@@ -6,19 +6,28 @@ import { HttpModule } from '@angular/http';
 import { FormsModule }   from '@angular/forms';
 import { RouterModule }   from '@angular/router';
 import { AgmCoreModule } from '@agm/core';
-import {ImageUploadModule} from "angular2-image-upload";
+import { ImageUploadModule } from "angular2-image-upload";
 
 import { AppComponent } from './app.component';
 import { NavigationComponent } from './navigation/navigation.component';
+import { SigninComponent } from './signin/signin.component';
+import { HomeComponent } from './home/home.component';
+import { PhotosComponent } from './photos/photos.component';
+import { AppRoutingModule } from './routing/routing.module';
+
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    NavigationComponent
+    NavigationComponent,
+    SigninComponent,
+    HomeComponent,
+    PhotosComponent
   ],
   imports: [
     BrowserModule,
+    AppRoutingModule,
     CommonModule,
     ReactiveFormsModule,
     HttpModule,

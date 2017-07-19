@@ -12,17 +12,17 @@ export class FlickrService {
     result$: Observable<any>;
     searchStr:string="";
     // API_KEY:string = 'bc39f561acb94d42e4f6745fbd8f5258'; 
-    API_KEY:string = 'd07b16ad52f827ad2b2d3f00964eaa88'; //given in url for userId.. 
+    // API_KEY:string = 'd07b16ad52f827ad2b2d3f00964eaa88'; //given in url for userId.. 
+    API_KEY:string = '0308ccb3e1eecc5414b173b3b98073f5'; //given in url for userId 7/19/17.. 
 
     secret:string = 'caef0a5bc45c84d5';
     photoset_id="72157683717828503"
     user_id="156828599%40N08"
 
 
-
     constructor(private _http: Http) { };
 
-//getResult method is the code to search from Flickr full site.. 
+// getResult method is the code to search from Flickr full site.. 
     // getResult(query: string) {
     //     console.log(query)
     //     let url = `https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=${this.API_KEY}&tags=${query}&per_page=12&format=json&nojsoncallback=1`;
@@ -45,7 +45,7 @@ export class FlickrService {
     // }
 
     getPhotoSet() {
-        let photosetUrl = "https://api.flickr.com/services/rest/?method=flickr.photosets.getPhotos&api_key=" + this.API_KEY + "&photoset_id=" + this.photoset_id + "&user_id=" + this.user_id + "&per_page=12&format=json&nojsoncallback=1&auth_token=72157683671228914-6247b4adc9c41418&api_sig=22a3c74a0e862138ae3033a65c318e95";
+        let photosetUrl = "https://api.flickr.com/services/rest/?method=flickr.photosets.getPhotos&api_key=" + this.API_KEY + "&photoset_id=" + this.photoset_id + "&user_id=" + this.user_id + "&per_page=12&format=json&nojsoncallback=1";
         return this._http
             .get(photosetUrl)
             .map(res => res.json())
