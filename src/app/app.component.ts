@@ -8,6 +8,7 @@ import 'rxjs/Rx';
 
 
 
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -18,12 +19,11 @@ import 'rxjs/Rx';
 
 export class AppComponent implements OnInit {
   title = 'Family Reserve Site in Progress';
-  //Stephanie we can take these lat/lng out when you move them into your maps piece
-  // lat: number = 51.678418;
-  // lng: number = 7.809007;
+
 
     ngOnInit(){
 
     }
 }
+
 

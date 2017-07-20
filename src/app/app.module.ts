@@ -11,12 +11,16 @@ import { MaterialModule } from '@angular/material';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AppComponent } from './app.component';
+
+import { MapsComponent } from './maps/maps.component';
+
 import { NavigationComponent } from './navigation/navigation.component';
 import { SigninComponent } from './signin/signin.component';
 import { HomeComponent } from './home/home.component';
 import { PhotosComponent } from './photos/photos.component';
 import { AppRoutingModule } from './routing/routing.module';
 import 'hammerjs';
+
 
 // import {AccordionModule} from 'primeng/primeng';     //accordion and accordion tab
 // import {MenuItem} from 'primeng/primeng';
@@ -29,11 +33,14 @@ import { FlickrService } from './flickr.service';
 @NgModule({
   declarations: [
     AppComponent,
+
+    MapsComponent,
     NavigationComponent,
     SigninComponent,
     HomeComponent,
     PhotosComponent,
     RegisterComponent
+
   ],
   imports: [
     BrowserModule,
