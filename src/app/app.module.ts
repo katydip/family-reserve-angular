@@ -21,6 +21,8 @@ import 'hammerjs';
 // import {AccordionModule} from 'primeng/primeng';     //accordion and accordion tab
 // import {MenuItem} from 'primeng/primeng';
 import { RegisterComponent } from './register/register.component';            //api
+import { UserService } from './user.service';
+import { FlickrService } from './flickr.service';
 
 
 
@@ -49,7 +51,7 @@ import { RegisterComponent } from './register/register.component';            //
     ImageUploadModule.forRoot()
 
   ],
-  providers: [ UserService ],
+  providers: [ UserService, FlickrService ],
   entryComponents: [AppComponent],
   bootstrap: [AppComponent]
 })

@@ -13,7 +13,8 @@ export class FlickrService {
     searchStr:string="";
     // API_KEY:string = 'bc39f561acb94d42e4f6745fbd8f5258'; 
     // API_KEY:string = 'd07b16ad52f827ad2b2d3f00964eaa88'; //given in url for userId.. 
-    API_KEY:string = '0308ccb3e1eecc5414b173b3b98073f5'; //given in url for userId 7/19/17.. 
+        // API_KEY:string = '0308ccb3e1eecc5414b173b3b98073f5'; //given in url for userId 7/19/17.. 
+        API_KEY:string = 'eefe6fc03628a4b83a97149f8602dda5'; //given in url for userId 7/20/17.. 
 
     secret:string = 'caef0a5bc45c84d5';
     photoset_id="72157683717828503";
