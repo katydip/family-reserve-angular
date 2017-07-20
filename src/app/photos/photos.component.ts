@@ -1,4 +1,5 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { Http } from '@angular/http';
 import { FlickrService } from '../flickr.service';
 import { AppComponent } from '../app.component';
 
@@ -24,14 +25,23 @@ export class PhotosComponent implements OnInit {
   constructor(private _formBuilder: FormBuilder, private _flickrService: FlickrService) { }
 
     ngOnInit() {
-    this.searchControl.valueChanges
-      .debounceTime(500)
-      .distinctUntilChanged()
-      .switchMap(() => this._flickrService.getPhotoSet())
+    this._flickrService.getPhotoSet()
       .subscribe(value => {
         this.photos = value;
       });
   }
+
+    likeMe(i) {
+    if (this.photos[i].liked == 0)
+      this.photos[i].liked = 1;
+    else
+      this.photos[i].liked = 0;
+  }
+  }
+
+
+
+//not need full flickr
   // ngOnInit() {
   //   this.searchControl.valueChanges
   //     .debounceTime(500)
@@ -42,6 +52,7 @@ export class PhotosComponent implements OnInit {
   //     });
   // }
 
-}
+// }
 
+  
 

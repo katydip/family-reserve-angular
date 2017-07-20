@@ -7,19 +7,19 @@ import { NgForm } from '@angular/forms';
 import { UserService } from '../user.service'
 
 @Component({
-  selector: 'app-signin',
-  templateUrl: './signin.component.html',
-  styleUrls: ['./signin.component.css']
+  selector: 'app-register',
+  templateUrl: './register.component.html',
+  styleUrls: ['./register.component.css']
 
 })
-export class SigninComponent implements OnInit {
+export class RegisterComponent implements OnInit {
 
-  userForm: NgForm;
-  @ViewChild('userForm') currentForm: NgForm;
+  peopleForm: NgForm;
+  @ViewChild('peopleForm') currentForm: NgForm;
 
   successMessage: string;
   errorMessage: string;
-  person: object = {};
+  people: object = {};
 
   constructor(
     private userService: UserService,
@@ -31,17 +31,17 @@ export class SigninComponent implements OnInit {
   
   }
   
-
-  // savePerson(id){
-  //     this.userService.addRecord("person", this.person)
-  //         .subscribe(
-  //           error =>  this.errorMessage = <any>error);
+  
+  saveUser(id){
+      this.userService.addPeople("user", this.people)
+          .subscribe(
+            error =>  this.errorMessage = <any>error);
     
 
-  //   this.person = {};
-  //   this.userForm.reset();
+    this.people = {};
+    this.peopleForm.reset();
 
-  // }
+  }
 
 
   ngAfterViewChecked() {
@@ -49,15 +49,15 @@ export class SigninComponent implements OnInit {
   }
 
   formChanged() {
-    this.userForm = this.currentForm;
-    this.userForm.valueChanges
+    this.peopleForm = this.currentForm;
+    this.peopleForm.valueChanges
       .subscribe(
         data => this.onValueChanged(data)
       );
   }
 
   onValueChanged(data?: any) {
-    let form = this.userForm.form;
+    let form = this.peopleForm.form;
 
     for (let field in this.formErrors) {
       // clear previous error message (if any)
@@ -76,11 +76,24 @@ export class SigninComponent implements OnInit {
 
   
   formErrors = {
-    "userName": "",
-    "password": "",
+   "firstName" : "",
+  "lastName" : "",
+  "userName" : "",
+  "password" : "",
+  "email" : ""
   };
 
   validationMessages = {
+      'firstName': {
+      'required': 'First name is required.',
+      'minlength': 'First name must be at least 2 characters long.',
+      'maxlength': 'First name cannot be more than 30 characters long.'
+    },
+    'lastName': {
+      'required': 'Last name is required.',
+      'minlength': 'Last name must be at least 2 characters long.',
+      'maxlength': 'Last name cannot be more than 30 characters long.'
+    },
     'userName': {
       'required': 'User name is required.',
       'minlength': 'User name must be at least 2 characters long.',
@@ -90,6 +103,11 @@ export class SigninComponent implements OnInit {
       'required': 'Password is required.',
       'minlength': 'Password must be at least 2 characters long.',
       'maxlength': 'Password cannot be more than 30 characters long.'
+    },
+    'email': {
+      'required': 'Email is required.',
+      'minlength': 'Email must be at least 2 characters long.',
+      'maxlength': 'Email cannot be more than 30 characters long.'
     }
   };
 

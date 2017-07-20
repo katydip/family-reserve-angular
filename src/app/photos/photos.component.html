@@ -1,20 +1,3 @@
-<div class="container">
-  <div class="row">
-    <input type="search" [formControl]="searchControl"> 
-    <!--<input type="text" [(ngModel)]="searchStr" ><button (click)="searchPhoto()">Search</button>-->
-  </div>
-  <div class="row">
-    <div *ngFor="let photo of photos">
-      <div class="col-xs-6 col-md-3">
-          <div class="thumbnail">
-            <img src={{photo.url}}>
-            <span class="card-title">{{photo.title}}</span>
-          </div>
-      </div>
-    </div>
-  </div>
-</div>
-
 <!--https://www.npmjs.com/package/angular2-image-upload-->
 <image-upload
   [max]="100"
@@ -32,3 +15,47 @@
 
 <!--<input type="file" (change)="fileChangeEvent($event)" placeholder="Upload file..." />
 <button type="button" (click)="upload()">Upload</button>-->
+
+
+<!--<div class="container">-->
+  <!--<div class="row">
+    <input type="search" [formControl]="searchControl"> 
+    <input type="text" [(ngModel)]="searchStr" ><button (click)="searchPhoto()">Search</button>
+  </div>-->
+  <!--<div class="row">
+    <div *ngFor="let photo of photos">
+      <div class="col-xs-6 col-md-3">
+          <div class="thumbnail">
+            <img src={{photo.url}}>
+            <span class="card-title">{{photo.title}}</span>
+          </div>
+      </div>
+    </div>
+  </div>
+</div>-->
+
+<div>
+<md-tab-group>
+  <md-tab label="Gallery">
+    <md-card *ngFor="let photo of photos; let i = index">
+      <img md-card-image src="{{ photo.url }}">
+      <md-card-content>
+        <p>{{ photo.title }}</p>
+      </md-card-content>
+      <md-card-actions>
+        <button md-button (click)="likeMe(i)">
+            <i class="material-icons md-18" [class.red-color]="photos.liked == '1'">favorite</i> LIKE
+        </button>
+        <!--<button md-button (click)="deleteMe(i)">
+            <i class="material-icons md-18">delete</i> DELETE 
+        </button>-->
+      </md-card-actions>
+    </md-card>
+  </md-tab>
+  <md-tab label="Settings">
+
+  </md-tab>
+</md-tab-group>
+<div>
+
+
