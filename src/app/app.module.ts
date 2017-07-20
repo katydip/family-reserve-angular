@@ -13,8 +13,6 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppComponent } from './app.component';
 
 import { MapsComponent } from './maps/maps.component';
-import { GeocodingComponent } from './geocoding/geocoding.component';
-import { FlickrComponent } from './flickr/flickr.component';
 
 import { NavigationComponent } from './navigation/navigation.component';
 import { SigninComponent } from './signin/signin.component';
@@ -37,9 +35,6 @@ import { FlickrService } from './flickr.service';
     AppComponent,
 
     MapsComponent,
-    GeocodingComponent,
-    FlickrComponent
-
     NavigationComponent,
     SigninComponent,
     HomeComponent,
