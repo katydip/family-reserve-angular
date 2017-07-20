@@ -18,8 +18,9 @@ import { PhotosComponent } from './photos/photos.component';
 import { AppRoutingModule } from './routing/routing.module';
 import 'hammerjs';
 
-import {AccordionModule} from 'primeng/primeng';     //accordion and accordion tab
-import {MenuItem} from 'primeng/primeng';            //api
+// import {AccordionModule} from 'primeng/primeng';     //accordion and accordion tab
+// import {MenuItem} from 'primeng/primeng';
+import { RegisterComponent } from './register/register.component';            //api
 
 
 
@@ -29,7 +30,8 @@ import {MenuItem} from 'primeng/primeng';            //api
     NavigationComponent,
     SigninComponent,
     HomeComponent,
-    PhotosComponent
+    PhotosComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,
@@ -47,7 +49,7 @@ import {MenuItem} from 'primeng/primeng';            //api
     ImageUploadModule.forRoot()
 
   ],
-  providers: [],
+  providers: [ UserService ],
   entryComponents: [AppComponent],
   bootstrap: [AppComponent]
 })

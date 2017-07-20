@@ -4,7 +4,7 @@ import { ActivatedRoute, Params } from '@angular/router';
 import { Location }               from '@angular/common';
 import { NgForm } from '@angular/forms';
 
-// import { DataService } from '../data.service'
+import { UserService } from '../user.service'
 
 @Component({
   selector: 'app-signin',
@@ -14,15 +14,17 @@ import { NgForm } from '@angular/forms';
 })
 export class SigninComponent implements OnInit {
 
-  signinForm: NgForm;
-  currentForm: NgForm;
-  errorMessage: string;
+  userForm: NgForm;
+  @ViewChild('userForm') currentForm: NgForm;
 
+  successMessage: string;
+  errorMessage: string;
+  person: object = {};
 
   constructor(
-    // private dataService: DataService,
-    // private route: ActivatedRoute,
-    // private location: Location
+    private userService: UserService,
+    private route: ActivatedRoute,
+    private location: Location
   ) {}
 
   ngOnInit() {
@@ -30,78 +32,64 @@ export class SigninComponent implements OnInit {
   }
   
   
+  savePerson(id){
+      this.userService.addRecord("person", this.person)
+          .subscribe(
+            error =>  this.errorMessage = <any>error);
+    
 
-//   saveStudent(id){
-//       this.dataService.addRecord("student", this.student)
-//           .subscribe(
-//             student => this.successMessage = "Record added succesfully",
-//             error =>  this.errorMessage = <any>error);
-//     }
+    this.person = {};
+    this.userForm.reset();
 
-//     this.student = {};
-//     this.studentForm.reset();
+  }
 
 
-//   ngAfterViewChecked() {
-//     this.formChanged();
-//   }
+  ngAfterViewChecked() {
+    this.formChanged();
+  }
 
-//   formChanged() {
-//     this.studentForm = this.currentForm;
-//     this.studentForm.valueChanges
-//       .subscribe(
-//         data => this.onValueChanged(data)
-//       );
-//   }
+  formChanged() {
+    this.userForm = this.currentForm;
+    this.userForm.valueChanges
+      .subscribe(
+        data => this.onValueChanged(data)
+      );
+  }
 
-//   onValueChanged(data?: any) {
-//     let form = this.studentForm.form;
+  onValueChanged(data?: any) {
+    let form = this.userForm.form;
 
-//     for (let field in this.formErrors) {
-//       // clear previous error message (if any)
-//       this.formErrors[field] = '';
-//       const control = form.get(field);
+    for (let field in this.formErrors) {
+      // clear previous error message (if any)
+      this.formErrors[field] = '';
+      const control = form.get(field);
 
-//       if (control && control.dirty && !control.valid) {
-//         const messages = this.validationMessages[field];
-//         for (const key in control.errors) {
-//           this.formErrors[field] += messages[key] + ' ';
-//         }
-//       }
-//     }
-//   }
-// }
+      if (control && control.dirty && !control.valid) {
+        const messages = this.validationMessages[field];
+        for (const key in control.errors) {
+          this.formErrors[field] += messages[key] + ' ';
+        }
+      }
+    }
+  }
+
 
   
   formErrors = {
-    "id": "",
-    "firstName": "",
-    "lastName": "",
     "userName": "",
     "password": "",
-    "email": "",
   };
 
   validationMessages = {
-    'firstName': {
-      'required': 'First name is required.',
-      'minlength': 'First name must be at least 2 characters long.',
-      'maxlength': 'First name cannot be more than 30 characters long.'
-    },
-    'lastName': {
-      'required': 'Last name is required.',
-      'minlength': 'Last name must be at least 2 characters long.',
-      'maxlength': 'Last name cannot be more than 30 characters long.'
-    },
     'userName': {
-      'pattern': 'SAT score must be between 400 and 1600',
-      'maxlength': 'SAT cannot be more than 4 characters long.'
+      'required': 'User name is required.',
+      'minlength': 'User name must be at least 2 characters long.',
+      'maxlength': 'User name cannot be more than 30 characters long.'
     },
     'password': {
-      'pattern': 'Start date should be in the following format: YYYY-MM-DD'
-    },
-    'email': {
-      'pattern': 'GPA must be a decimal'
+      'required': 'Password is required.',
+      'minlength': 'Password must be at least 2 characters long.',
+      'maxlength': 'Password cannot be more than 30 characters long.'
     }
   };
 
