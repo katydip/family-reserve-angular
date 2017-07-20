@@ -5,6 +5,8 @@ import { SigninComponent }   from '../signin/signin.component';
 import { HomeComponent }   from '../home/home.component';
 import { PhotosComponent }   from '../photos/photos.component';
 import { RegisterComponent }   from '../register/register.component';
+import { MapsComponent }   from '../maps/maps.component';
+
 
 
 
@@ -15,6 +17,7 @@ const routes: Routes = [
   { path: 'register',  component: RegisterComponent },
 
   { path: 'photos',  component: PhotosComponent },
+  { path: 'maps',  component: MapsComponent },
 //   { path: 'student/edit/:id', component: StudentFormComponent },
   { path: 'register/add', component: RegisterComponent },
 
