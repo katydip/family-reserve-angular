@@ -16,7 +16,7 @@ const routes: Routes = [
 
   { path: 'photos',  component: PhotosComponent },
 //   { path: 'student/edit/:id', component: StudentFormComponent },
-//   { path: 'student/add', component: StudentFormComponent },
+  { path: 'register/add', component: RegisterComponent },
 
 //   { path: 'grade',  component: GradeComponent },
 //   { path: 'grade/edit/:id', component: GradeFormComponent },

@@ -16,7 +16,7 @@
       </button>
   </div>
 
-  <form (ngSubmit)="saveUser(person.id)"  #userForm="ngForm" class="form-horizontal">
+  <form (ngSubmit)="savePerson(person.id)"  #userForm="ngForm" class="form-horizontal">
     <input [(ngModel)]="person.id" #user_id="ngModel" type="hidden" name="id">
     <div class="form-group">
       <label for="userName" class="col-sm-2 control-label">User Name</label>

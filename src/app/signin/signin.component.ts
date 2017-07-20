@@ -31,17 +31,17 @@ export class SigninComponent implements OnInit {
   
   }
   
-  
-  savePerson(id){
-      this.userService.addRecord("person", this.person)
-          .subscribe(
-            error =>  this.errorMessage = <any>error);
+
+  // savePerson(id){
+  //     this.userService.addRecord("person", this.person)
+  //         .subscribe(
+  //           error =>  this.errorMessage = <any>error);
     
 
-    this.person = {};
-    this.userForm.reset();
+  //   this.person = {};
+  //   this.userForm.reset();
 
-  }
+  // }
 
 
   ngAfterViewChecked() {
