@@ -8,6 +8,8 @@ import { RouterModule }   from '@angular/router';
 import { AgmCoreModule } from '@agm/core';
 
 import { AppComponent } from './app.component';
+import { MapsComponent } from './maps/maps.component';
+import { GeocodingComponent } from './geocoding/geocoding.component';
 // import { FlickrComponent } from './flickr/flickr.component';
 
 // import { FlickrService } from './flickr.service';
@@ -17,6 +19,8 @@ import { AppComponent } from './app.component';
 @NgModule({
   declarations: [
     AppComponent,
+    MapsComponent,
+    GeocodingComponent,
     // FlickrComponent
   ],
   imports: [

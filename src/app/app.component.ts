@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FlickrService } from './flickr.service';
 
 
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -10,17 +11,12 @@ import { FlickrService } from './flickr.service';
 
 export class AppComponent {
   title = 'Family Reserve Site in Progress';
-  lat: number = 51.678418;
-  lng: number = 7.809007;
 
   // photo;
 
   // constructor(private FlickrService: FlickrService){}
 
 }
-
-  
-
 
 //   getPhotos(){
 //     this.FlickrService.getRecords("photo")
