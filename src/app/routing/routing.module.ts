@@ -9,7 +9,8 @@ import { PhotosComponent }   from '../photos/photos.component';
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
   { path: 'home',  component: HomeComponent },
-  
+  { path: 'signin',  component: SigninComponent },
+
   { path: 'photos',  component: PhotosComponent },
 //   { path: 'student/edit/:id', component: StudentFormComponent },
 //   { path: 'student/add', component: StudentFormComponent },

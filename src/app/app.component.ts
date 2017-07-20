@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {Http} from '@angular/http';
 // import { FlickrService } from './flickr.service';
 
 import { FormBuilder, FormGroup, FormControl, Validators } from '@angular/forms';

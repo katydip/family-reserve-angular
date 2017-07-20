@@ -16,8 +16,10 @@ export class FlickrService {
     API_KEY:string = '0308ccb3e1eecc5414b173b3b98073f5'; //given in url for userId 7/19/17.. 
 
     secret:string = 'caef0a5bc45c84d5';
-    photoset_id="72157683717828503"
-    user_id="156828599%40N08"
+    photoset_id="72157683717828503";
+    user_id="156828599%40N08";
+    uploadUrl="https://up.flickr.com/services/upload/";
+    uploadphoto="";
 
 
     constructor(private _http: Http) { };
@@ -64,6 +66,18 @@ export class FlickrService {
             });
     
     }
+
+uploadPhoto(){
+
+}
+
+// addRecord(endpoint: string, record:object): Observable<object> {
+//         let apiUrl = `${this.baseUrl}${endpoint}`;
+//         console.log(apiUrl)
+//         return this.http.post(apiUrl, record)
+//             .map(this.extractData)
+//             .catch(this.handleError);
+//     }
 
 }
 
