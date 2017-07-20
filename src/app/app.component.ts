@@ -1,5 +1,11 @@
 import { Component, OnInit } from '@angular/core';
-import { FlickrService } from './flickr.service';
+import {Http} from '@angular/http';
+// import { FlickrService } from './flickr.service';
+
+import { FormBuilder, FormGroup, FormControl, Validators } from '@angular/forms';
+import { Observable } from 'rxjs/Observable';
+import 'rxjs/Rx';
+
 
 
 
@@ -7,28 +13,17 @@ import { FlickrService } from './flickr.service';
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
+    // providers: [FlickrService]
+
 })
 
-export class AppComponent {
+export class AppComponent implements OnInit {
   title = 'Family Reserve Site in Progress';
 
-  // photo;
 
-  // constructor(private FlickrService: FlickrService){}
+    ngOnInit(){
 
+    }
 }
-
-//   getPhotos(){
-//     this.FlickrService.getRecords("photo")
-//     //wait for Observable to be done then will do something
-//     .subscribe(
-//       //if {} can place more than one function call.  if no {} can only call one function
-//       photo => 
-//       {this.photo = photo; 
-//       console.log(this.photo[0])
-//       }
-//     )
-
-// }
 
 
