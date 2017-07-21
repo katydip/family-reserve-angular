@@ -37,6 +37,8 @@ export class PhotosComponent implements OnInit {
     else
       this.photos[i].liked = 0;
   }
+
+   
   }
 
 

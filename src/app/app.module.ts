@@ -27,7 +27,8 @@ import 'hammerjs';
 import { RegisterComponent } from './register/register.component';            //api
 import { UserService } from './user.service';
 import { FlickrService } from './flickr.service';
-
+import { FlexLayoutModule } from "@angular/flex-layout";
+import { UploadphotosComponent } from './uploadphotos/uploadphotos.component';
 
 
 @NgModule({
@@ -39,7 +40,8 @@ import { FlickrService } from './flickr.service';
     SigninComponent,
     HomeComponent,
     PhotosComponent,
-    RegisterComponent
+    RegisterComponent,
+    UploadphotosComponent
 
   ],
   imports: [
@@ -55,7 +57,8 @@ import { FlickrService } from './flickr.service';
     AgmCoreModule.forRoot({
       apiKey: 'AIzaSyBbSfE0t3tuzdiOtarHlBrkgHNMjeOQGEY'
     }),
-    ImageUploadModule.forRoot()
+    ImageUploadModule.forRoot(),
+    FlexLayoutModule
 
   ],
   providers: [ UserService, FlickrService ],

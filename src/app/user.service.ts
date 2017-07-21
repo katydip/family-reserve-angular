@@ -14,13 +14,6 @@ export class UserService {
 
     constructor (private http: Http) {}
 
-    //     addRecord(endpoint: string, record:object): Observable<object> {
-    //     let apiUrl = `${this.baseUrl}${endpoint}`;
-    //     console.log(apiUrl)
-    //     return this.http.post(apiUrl, record)
-    //         .map(this.extractData)
-    //         .catch(this.handleError);
-    // }
 
     addPeople(endpoint: string, record:object): Observable<object> {
         let apiUrl = `${this.baseUrl}${endpoint}`;

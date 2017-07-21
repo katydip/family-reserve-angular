@@ -1,7 +1,36 @@
-<nav class="navbar navbar-inverse navbar-static-top">
-  <div class="container-fluid">
-    <!-- Brand and toggle get grouped for better mobile display -->
-    <div class="navbar-header">
+<md-toolbar color="primary">
+  <span>Family Reserve</span>
+      <ul id="links">
+        <li routerLinkActive="active"><a routerLink="/home">Home</a></li>
+        <li routerLinkActive="active"><a routerLink="/photos" >Photos</a></li>
+        <li routerLinkActive="active"><a routerLink="/signin" >SignIn</a></li>
+        <li routerLinkActive="active"><a routerLink="/register" >Register</a></li>
+        <li routerLinkActive="active"><a routerLink="/maps" >Map</a></li>
+      </ul>
+          <span class="spacer"></span>
+
+  <button md-icon-button [mdMenuTriggerFor]="menu">
+    <md-icon>more_vert</md-icon>
+  </button>
+  <md-menu #menu="mdMenu">
+      <button md-menu-item>
+        <md-icon>fingerprint</md-icon>
+        <span routerLinkActive="active"><a routerLink="/signin">SignIn</a></span>
+      </button>
+      <button md-menu-item disabled>
+        <md-icon>announcement</md-icon>
+        <span>Issues</span>
+      </button>
+      <button md-menu-item>
+        <md-icon>notifications_off</md-icon>
+        <span>Disable alerts</span>
+      </button>
+    </md-menu>
+</md-toolbar>
+
+
+
+    <!--<div class="navbar-header">
       <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
         <span class="sr-only">Toggle navigation</span>
         <span class="icon-bar"></span>
@@ -11,7 +40,6 @@
       <a class="navbar-brand" href="#">{{brand}}</a>
     </div>
 
-    <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
         <li routerLinkActive="active"><a routerLink="/home">Home</a></li>
@@ -41,9 +69,7 @@
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
           <ul class="dropdown-menu">
-            <!--<li routerLinkActive="active"><a routerLink="/home">Home</a></li>
-           <li routerLinkActive="active"><a routerLink="/photos" >Photos</a></li>-->
-
+          
             <li><a href="#">Another action</a></li>
             <li><a href="#">Something else here</a></li>
             <li role="separator" class="divider"></li>
@@ -51,32 +77,8 @@
           </ul>
         </li>
       </ul>
-    </div><!-- /.navbar-collapse -->
+    </div>
 
-  </div><!-- /.container-fluid -->
+  </div>
 </nav>
-<md-toolbar color="primary">
-  <span>Family Reserve</span>
-  <span class="spacer"></span>
-        <!--<li routerLinkActive="active"><a routerLink="/home">Home</a></li>
-        <li routerLinkActive="active"><a routerLink="/photos" >Photos</a></li>-->
-
-  <button md-icon-button [mdMenuTriggerFor]="menu">
-    <md-icon>more_vert</md-icon>
-  </button>
-  <md-menu #menu="mdMenu">
-      <button md-menu-item>
-        <md-icon>fingerprint</md-icon>
-        <span>Login</span>
-      </button>
-      <button md-menu-item disabled>
-        <md-icon>announcement</md-icon>
-        <span>Issues</span>
-      </button>
-      <button md-menu-item>
-        <md-icon>notifications_off</md-icon>
-        <span>Disable alerts</span>
-      </button>
-    </md-menu>
-</md-toolbar>
-
+-->

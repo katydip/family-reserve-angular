@@ -1,0 +1,19 @@
+.jumbotron {
+     background-image: url("../../assets/images/tree3.jpg");
+     opacity: 0.5;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: crimson;
+    height: 400px;
+         opacity: 1;
+
+}
+.container h1 {
+        color: crimson;
+        opacity: 2;
+}

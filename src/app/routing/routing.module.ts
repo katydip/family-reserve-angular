@@ -6,6 +6,8 @@ import { HomeComponent }   from '../home/home.component';
 import { PhotosComponent }   from '../photos/photos.component';
 import { RegisterComponent }   from '../register/register.component';
 import { MapsComponent }   from '../maps/maps.component';
+import { UploadphotosComponent }   from '../uploadphotos/uploadphotos.component';
+
 
 
 
@@ -20,6 +22,8 @@ const routes: Routes = [
   { path: 'maps',  component: MapsComponent },
 //   { path: 'student/edit/:id', component: StudentFormComponent },
   { path: 'register/add', component: RegisterComponent },
+    { path: 'uploadphotos',  component: UploadphotosComponent },
+
 
 //   { path: 'grade',  component: GradeComponent },
 //   { path: 'grade/edit/:id', component: GradeFormComponent },
