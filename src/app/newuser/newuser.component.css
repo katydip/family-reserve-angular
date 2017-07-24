@@ -1,28 +1,24 @@
-
 @import url(https://fonts.googleapis.com/css?family=Roboto:400,300,500);
 *:focus {
   outline: none;
 }
 
-/*body {
+body {
   margin: 0;
   padding: 0;
-  background: lightgray;
+  background: #DDD;
   font-size: 16px;
   color: #222;
   font-family: 'Roboto', sans-serif;
   font-weight: 300;
-}*/
+}
 
 #login-box {
   position: relative;
   margin: 5% auto;
-  margin-left: 150px;
-  width: 500px;
-  height: 600px;
-  background: lightgray;
-    font-family: 'Roboto', sans-serif;
-
+  width: 600px;
+  height: 800px;
+  background: #FFF;
   border-radius: 2px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
 }
@@ -30,21 +26,17 @@
 .left {
   position: absolute;
   top: 0;
-  left: 0px;
+  left: 0;
   box-sizing: border-box;
-  padding: 50px;
-  width: 500px;
+  padding: 40px;
+  width: 400px;
   height: 400px;
 }
 
-.left h1 {
+h1 {
   margin: 0 0 20px 0;
-  font-weight: bold;
+  font-weight: 300;
   font-size: 28px;
-}
-
-.auth-link {
-  padding: 10px;
 }
 
 .form-group row  {
@@ -52,7 +44,7 @@
   box-sizing: border-box;
   margin-bottom: 20px;
   padding: 4px;
-  width: 220px;
+  width: 400px;
   height: 32px;
   border: none;
   border-bottom: 1px solid #AAA;
@@ -62,19 +54,19 @@
   transition: 0.2s ease;
 }
 
-/*input[type="text"]:focus,
+input[type="text"]:focus,
 input[type="password"]:focus {
   border-bottom: 2px solid #16a085;
   color: #16a085;
   transition: 0.2s ease;
-}*/
+}
 
 
 
 .or {
   position: absolute;
-  top: 400px;
-  left: 52%;
+  top: 300px;
+  left: 70%;
   width: 40px;
   height: 40px;
   background: #DDD;
@@ -88,12 +80,12 @@ input[type="password"]:focus {
   position: absolute;
   top: 0;
   margin-top: 130px;
-  margin-right: 150px;
+  margin-right: 50px;
   right: 0;
   box-sizing: border-box;
   padding: 40px;
-  width: 400px;
-  height: 600px;
+  width: 300px;
+  height: 800px;
   background: url('https://goo.gl/YbktSj');
   background-size: cover;
   background-position: center;
@@ -110,7 +102,6 @@ input[type="password"]:focus {
 
 button.social-signin {
   margin-bottom: 20px;
-  margin-left: 50px;
   width: 220px;
   height: 36px;
   border: none;
@@ -122,6 +113,16 @@ button.social-signin {
   cursor: pointer;
 }
 
+/*button.social-signin:hover,
+button.social-signin:focus {
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+  transition: 0.2s ease;
+}
+
+button.social-signin:active {
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
+  transition: 0.2s ease;
+}*/
 
 button.social-signin.facebook {
   background: #32508E;

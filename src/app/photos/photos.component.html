@@ -75,3 +75,33 @@
   </md-tab>
 </md-tab-group>
 <div>-->
+
+  <div class="modal fade" id="selectedImageModal" >
+	  <div class="modal-dialog" role="document">
+	    <div class="modal-content">
+	      <div class="modal-body">
+	        <div class="selectedImage" *ngIf="selectedImage">
+   <img src="{{selectedImage.url}}" >
+   <div class="arrow-back" (click)=navigate(false)>
+      &lt;
+   </div>
+   <div class="arrow-forward" (click)=navigate(true)>
+      &gt;
+   </div>
+   <div class="caption">
+      <p><strong>{{selectedImage.title}}</strong></p>
+      <p>{{selectedImage.caption}}</p>
+   </div>
+</div>
+	      </div>
+	    </div>
+	  </div>
+	</div>
+  	<ul id="thumbnailsList">
+  	   <li *ngFor="let photo of photos; let i = index">
+  	      <img src="{{photo.url}}" class="tn"
+  		  width="191" height="146"  
+  		  data-toggle="modal" data-target="#selectedImageModal"
+                  (click)=setSelectedImage(photo)>
+  	   </li>
+  	</ul>

@@ -1,6 +1,10 @@
 
 import { Component, OnInit } from '@angular/core';
-import { FileSelectDirective, FileDropDirective, FileUploader } from 'ng2-file-upload/ng2-file-upload';
+import { ViewChild, Input, Output, EventEmitter, ElementRef, Renderer } from '@angular/core';
+import { fadeInAnimation } from '../animations/fade-in.animations';
+
+
+import { FileUploader } from 'ng2-file-upload';
 
  
 const URL = 'https://up.flickr.com/services/upload/';
@@ -8,9 +12,11 @@ const URL = 'https://up.flickr.com/services/upload/';
 @Component({
   selector: 'app-uploadphotos',
   templateUrl: './uploadphotos.component.html',
-  styleUrls: ['./uploadphotos.component.css']
+  styleUrls: ['./uploadphotos.component.css'],
+    animations: [fadeInAnimation],
+
 })
-export class UploadphotosComponent implements OnInit {
+export class UploadphotosComponent {
 
   public uploader:FileUploader = new FileUploader({url: URL});
   public hasBaseDropZoneOver:boolean = false;
@@ -23,7 +29,6 @@ export class UploadphotosComponent implements OnInit {
   // public fileOverAnother(e:any):void {
   //   this.hasAnotherDropZoneOver = e;
   // }
-  ngOnInit() {
-  }
+
 
 }

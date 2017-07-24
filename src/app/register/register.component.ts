@@ -1,15 +1,19 @@
+
 import 'rxjs/add/operator/switchMap';
 import { Component, OnInit, Input, ViewChild }      from '@angular/core';
-import { ActivatedRoute, Params } from '@angular/router';
+import { ActivatedRoute, Params, Router } from '@angular/router';
 import { Location }               from '@angular/common';
-import { NgForm } from '@angular/forms';
+import { NgForm, FormGroup, AbstractControl, FormBuilder, Validators} from '@angular/forms';
+import { fadeInAnimation } from '../animations/fade-in.animations';
 
 import { UserService } from '../user.service'
 
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',
-  styleUrls: ['./register.component.css']
+  styleUrls: ['./register.component.css'],
+    animations: [fadeInAnimation],
+
 
 })
 export class RegisterComponent implements OnInit {
@@ -24,7 +28,8 @@ export class RegisterComponent implements OnInit {
   constructor(
     private userService: UserService,
     private route: ActivatedRoute,
-    private location: Location
+    private location: Location,
+    private router: Router
   ) {}
 
   ngOnInit() {
@@ -39,7 +44,7 @@ export class RegisterComponent implements OnInit {
     
 
     this.people = {};
-    this.peopleForm.reset();
+    this.router.navigate(['/home'])
 
   }
 
@@ -96,18 +101,12 @@ export class RegisterComponent implements OnInit {
     },
     'userName': {
       'required': 'User name is required.',
-      'minlength': 'User name must be at least 2 characters long.',
-      'maxlength': 'User name cannot be more than 30 characters long.'
     },
     'password': {
       'required': 'Password is required.',
-      'minlength': 'Password must be at least 2 characters long.',
-      'maxlength': 'Password cannot be more than 30 characters long.'
     },
     'email': {
       'required': 'Email is required.',
-      'minlength': 'Email must be at least 2 characters long.',
-      'maxlength': 'Email cannot be more than 30 characters long.'
     }
   };
 

@@ -1,13 +1,8 @@
-<section>
-
-  <ol class="breadcrumb">
-      <li><a routerLink="/home">Home</a></li>
-      <li><a routerLink="/register">Register</a></li>
-  </ol>
-  <br/>
-  <a class="btn btn-primary" routerLink="/signin">Return to Log In</a>
-
-  <h1>Register</h1>
+  
+ <div id="login-box">
+  <div class="left">
+     <h1>Sign up for Family Reserve</h1>
+        <a routerLink="/signin" class="auth-link">Already have a Family Reserve account? Sign in!</a>
 
   <div [ngClass]="(errorMessage)?'alert alert-danger':'alert alert-success'" role="alert" *ngIf="errorMessage">
       {{errorMessage}} 
@@ -72,4 +67,15 @@
     </div>
  
   </form>
-</section>
+    </div>
+    </div>
+
+      <div class="or">OR</div>
+  
+  <div class="right">
+    <span class="loginwith">Sign in with<br />social network</span>
+    
+    <button class="social-signin facebook">Log in with facebook</button>
+    <button class="social-signin twitter">Log in with Twitter</button>
+    <button class="social-signin google">Log in with Google+</button>
+  </div>

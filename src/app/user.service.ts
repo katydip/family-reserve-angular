@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Http, Response } from '@angular/http';
-
+import { Http, Headers, Response } from '@angular/http';
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/catch';
 import 'rxjs/add/observable/throw';
@@ -10,6 +9,7 @@ import 'rxjs/add/operator/map';
 export class UserService {
 
     private baseUrl = 'https://cors-anywhere.herokuapp.com/https://familyreserve.herokuapp.com/api/'
+    private baseloginUrl = 'https://cors-anywhere.herokuapp.com/https://familyreserve.herokuapp.com/'
 
 
     constructor (private http: Http) {}
@@ -21,6 +21,19 @@ export class UserService {
         return this.http.post(apiUrl, record)
             .map(this.extractData)
             .catch(this.handleError);
+    }
+
+    getlogin(endpoint: string, record:object): Observable<object> {
+        let apiUrl = `${this.baseloginUrl}${endpoint}`;
+
+        return this.http.post(apiUrl, record)
+            .map(this.extractData); 
+    }
+    
+
+    logout() {
+        // remove user from local storage to log user out
+        localStorage.removeItem('currentUser');
     }
 
 
