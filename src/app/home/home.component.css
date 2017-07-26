@@ -1,0 +1,17 @@
+.jumbotron {
+     background-image: url("../../assets/images/tree3.jpg");
+     opacity: 0.7;
+     margin-top: 75px;
+}
+
+.thumbnail {
+    font-size: 20px;
+    color: black;
+    text-align: center;
+    font-weight: bold;
+}
+/*.row {
+    align-items: center;
+}*/
+
+

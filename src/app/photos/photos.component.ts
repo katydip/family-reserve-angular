@@ -2,6 +2,8 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { Http } from '@angular/http';
 import { FlickrService } from '../flickr.service';
 import { AppComponent } from '../app.component';
+import { fadeInAnimation } from '../animations/fade-in.animations';
+
 
 import { FormBuilder, FormGroup, FormControl, Validators } from '@angular/forms';
 import { Observable } from 'rxjs/Observable';
@@ -12,6 +14,8 @@ import 'rxjs/Rx';
   selector: 'app-photos',
   templateUrl: './photos.component.html',
   styleUrls: ['./photos.component.css'],
+    animations: [fadeInAnimation],
+
       providers: [FlickrService]
 
 })
@@ -37,6 +41,19 @@ export class PhotosComponent implements OnInit {
     else
       this.photos[i].liked = 0;
   }
+  selectedImage;
+ 
+   setSelectedImage(photo){
+      this.selectedImage= photo;	
+   }
+
+//    navigate(forward){
+//    var index = this._flickrService.indexOf(this.selectedImage)+(forward ? 1: -1);
+//    if(index >= 0 && index < this._flickrService.length){
+//       this.selectedImage = this._flickrService[index];	
+//    }
+// }
+   
   }
 
 

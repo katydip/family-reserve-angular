@@ -1,0 +1,42 @@
+<div id="background">
+  <div id="profile">
+    <h2>Your Profile</h2>
+      <a class="btn btn-default" [routerLink]="['/profile/edit']">Edit Profile <i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
+
+
+    <div id="profiledata">
+      <div class="well">First Name:    <b>{{user.firstName}}</b></div>
+      <div class="well">Last Name:   <b> {{user.lastName}}</b></div>
+      <div class="well">Email:    <b>{{user.email}}</b></div>
+      <!--<div class="well">Families: {{user.families}}</div>-->
+    </div>
+  </div>
+</div>
+
+
+  <!--<table class="table table-striped table-bordered" id="dataTable" style="width:100%">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Email</th>
+        <th>Families</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <tr *ngFor="let people of person">
+        <td>{{people.id}}</td>
+        <td>{{people.firstName}}</td>
+        <td>{{people.lastName}}</td>
+        <td>{{people.email}}</td>
+        <td>{{people.families}}</td>
+        <td class="text-center">
+          <a class="btn btn-primary" [routerLink]="['/profile/edit/', people.id]">Edit Profile</a>&nbsp;
+        </td>
+      </tr>
+    </tbody>
+  </table>-->
+
+

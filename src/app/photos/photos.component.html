@@ -1,17 +1,3 @@
-<!--https://www.npmjs.com/package/angular2-image-upload-->
-<image-upload
-  [max]="100"
-  [url]="'example.com/images/upload'"
-  [headers]="[
-    {header: 'Authorization', value: 'MyToken'}
-  ]"
-  [buttonCaption]="'Select Photos!'"
-  [dropBoxMessage]="'Drag and drop your photos here!'"
-  [extensions]="['jpg','png','gif']"
-  (onFileUploadFinish)="imageUploaded($event)"
-  (onRemove)="imageRemoved($event)"
-  (isPending)="disableSendButton($event)"
-></image-upload>
 
 <!--<input type="file" (change)="fileChangeEvent($event)" placeholder="Upload file..." />
 <button type="button" (click)="upload()">Upload</button>-->
@@ -30,13 +16,49 @@
             <span class="card-title">{{photo.title}}</span>
           </div>
       </div>
-    </div>
+    </di
   </div>
 </div>-->
 
+
+<h1 id="gallery">Gallery</h1>
+<!--new way with bootstrap.-->
+<div class="container-fluid">
+  <div class="row cards text-center" id="stuff">
+  <div *ngFor="let photo of photos; let i = index" class="col-sm-6 col-md-4 card">
+      <img width="300" height="300" src="{{ photo.url }}">
+        <p>{{ photo.title }}</p>
+  </div>
+ </div>
+ </div>
+
+  <a class="btn btn-primary" routerLink="/uploadphotos">Upload Photos</a>
+
+
+    <!--https://www.npmjs.com/package/angular2-image-upload-->
+<!--<image-upload
+  [max]="100"
+  [url]="'example.com/images/upload'"
+  [headers]="[
+    {header: 'Authorization', value: 'MyToken'}
+  ]"
+  [buttonCaption]="'Add Photos!'"
+  [dropBoxMessage]="'Drag and drop your photos here!'"
+  [extensions]="['jpg','png','gif']"
+  (onFileUploadFinish)="imageUploaded($event)"
+  (onRemove)="imageRemoved($event)"
+  (isPending)="disableSendButton($event)"
+></image-upload>-->
+
+
+
+
+
+
+<!--old way with gallery
 <div>
 <md-tab-group>
-  <md-tab label="Gallery">
+  <md-tab label="Gallery" class="tabs">
     <md-card *ngFor="let photo of photos; let i = index">
       <img md-card-image src="{{ photo.url }}">
       <md-card-content>
@@ -46,16 +68,40 @@
         <button md-button (click)="likeMe(i)">
             <i class="material-icons md-18" [class.red-color]="photos.liked == '1'">favorite</i> LIKE
         </button>
-        <!--<button md-button (click)="deleteMe(i)">
-            <i class="material-icons md-18">delete</i> DELETE 
-        </button>-->
       </md-card-actions>
     </md-card>
   </md-tab>
-  <md-tab label="Settings">
-
+  <md-tab label="Settings" class="tabs">
   </md-tab>
 </md-tab-group>
-<div>
+<div>-->
 
-
+  <!--<div class="modal fade" id="selectedImageModal" >
+	  <div class="modal-dialog" role="document">
+	    <div class="modal-content">
+	      <div class="modal-body">
+	        <div class="selectedImage" *ngIf="selectedImage">
+   <img src="{{selectedImage.url}}" >
+   <div class="arrow-back" (click)=navigate(false)>
+      &lt;
+   </div>
+   <div class="arrow-forward" (click)=navigate(true)>
+      &gt;
+   </div>
+   <div class="caption">
+      <p><strong>{{selectedImage.title}}</strong></p>
+      <p>{{selectedImage.caption}}</p>
+   </div>
+</div>
+	      </div>
+	    </div>
+	  </div>
+	</div>
+  	<ul id="thumbnailsList">
+  	   <li *ngFor="let photo of photos; let i = index">
+  	      <img src="{{photo.url}}" class="tn"
+  		  width="191" height="146"  
+  		  data-toggle="modal" data-target="#selectedImageModal"
+                  (click)=setSelectedImage(photo)>
+  	   </li>
+  	</ul>-->

@@ -1,47 +1,58 @@
 import 'rxjs/add/operator/switchMap';
-import { Component, OnInit, Input, ViewChild }      from '@angular/core';
-import { ActivatedRoute, Params } from '@angular/router';
+import { Component, Input, ViewChild }      from '@angular/core';
+import { ActivatedRoute, Params, Router } from '@angular/router';
 import { Location }               from '@angular/common';
-import { NgForm } from '@angular/forms';
+import { NgForm, FormGroup, AbstractControl, FormBuilder, Validators } from '@angular/forms';
+import { fadeInAnimation } from '../animations/fade-in.animations';
+
 
 import { UserService } from '../user.service'
 
 @Component({
   selector: 'app-signin',
   templateUrl: './signin.component.html',
-  styleUrls: ['./signin.component.css']
+  styleUrls: ['./signin.component.css'],
+    animations: [fadeInAnimation],
+
 
 })
-export class SigninComponent implements OnInit {
+export class SigninComponent {
+
 
   userForm: NgForm;
   @ViewChild('userForm') currentForm: NgForm;
 
   successMessage: string;
   errorMessage: string;
-  person: object = {};
+  user: object = {};
 
   constructor(
     private userService: UserService,
     private route: ActivatedRoute,
-    private location: Location
+    private location: Location,
+    private router: Router
   ) {}
 
-  ngOnInit() {
   
+//to log in and put the user object into local storage
+  login(user){
+    console.log(user.value)
+      this.userService.getlogin("session/new", user.value)
+          .subscribe(
+            user => {
+              this.user = user
+              console.log(user)
+              localStorage.setItem('currentUser', JSON.stringify(this.user))
+              //to pull up on other page
+              // this.user = JSON.parse(localStorage.getItem('currentUser'))
+              this.router.navigate(['/home'])
+             
+            },
+            error =>  this.errorMessage = <any>error
+          )
   }
-  
 
-  // savePerson(id){
-  //     this.userService.addRecord("person", this.person)
-  //         .subscribe(
-  //           error =>  this.errorMessage = <any>error);
-    
 
-  //   this.person = {};
-  //   this.userForm.reset();
-
-  // }
 
 
   ngAfterViewChecked() {
@@ -60,7 +71,6 @@ export class SigninComponent implements OnInit {
     let form = this.userForm.form;
 
     for (let field in this.formErrors) {
-      // clear previous error message (if any)
       this.formErrors[field] = '';
       const control = form.get(field);
 
@@ -72,7 +82,6 @@ export class SigninComponent implements OnInit {
       }
     }
   }
-
 
   
   formErrors = {

@@ -1,15 +1,19 @@
+
 import 'rxjs/add/operator/switchMap';
 import { Component, OnInit, Input, ViewChild }      from '@angular/core';
-import { ActivatedRoute, Params } from '@angular/router';
+import { ActivatedRoute, Params, Router } from '@angular/router';
 import { Location }               from '@angular/common';
-import { NgForm } from '@angular/forms';
+import { NgForm, FormGroup, AbstractControl, FormBuilder, Validators} from '@angular/forms';
+import { fadeInAnimation } from '../animations/fade-in.animations';
 
 import { UserService } from '../user.service'
 
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',
-  styleUrls: ['./register.component.css']
+  styleUrls: ['./register.component.css'],
+    animations: [fadeInAnimation],
+
 
 })
 export class RegisterComponent implements OnInit {
@@ -19,27 +23,29 @@ export class RegisterComponent implements OnInit {
 
   successMessage: string;
   errorMessage: string;
-  people: object = {};
+  user: object = {};
 
   constructor(
     private userService: UserService,
     private route: ActivatedRoute,
-    private location: Location
+    private location: Location,
+    private router: Router
   ) {}
 
   ngOnInit() {
   
   }
   
-  
-  saveUser(id){
-      this.userService.addPeople("user", this.people)
-          .subscribe(
-            error =>  this.errorMessage = <any>error);
-    
+  saveUser(form: NgForm){
 
-    this.people = {};
-    this.peopleForm.reset();
+      this.userService.addPeople("person", form.value)
+          .subscribe(
+            user => {
+                localStorage.setItem('currentUser', JSON.stringify(user))
+                this.router.navigate(['/home'])
+            },
+            error =>  this.errorMessage = <any>error
+            )
 
   }
 
@@ -96,18 +102,12 @@ export class RegisterComponent implements OnInit {
     },
     'userName': {
       'required': 'User name is required.',
-      'minlength': 'User name must be at least 2 characters long.',
-      'maxlength': 'User name cannot be more than 30 characters long.'
     },
     'password': {
       'required': 'Password is required.',
-      'minlength': 'Password must be at least 2 characters long.',
-      'maxlength': 'Password cannot be more than 30 characters long.'
     },
     'email': {
       'required': 'Email is required.',
-      'minlength': 'Email must be at least 2 characters long.',
-      'maxlength': 'Email cannot be more than 30 characters long.'
     }
   };
 
