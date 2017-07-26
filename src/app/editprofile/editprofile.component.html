@@ -1,0 +1,54 @@
+<section id="editprofile">
+
+    <a routerLink="/profile" class="auth-link">Return to Profile</a>
+
+
+  <h1>Manage Profile</h1>
+
+  <div [ngClass]="(errorMessage)?'alert alert-danger':'alert alert-success'" role="alert" *ngIf="errorMessage || successMessage">
+      {{errorMessage}} {{successMessage}}
+      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+      </button>
+  </div>
+
+ 
+    <form (ngSubmit)="saveProfile(user.id)"  #profileForm="ngForm" class="form-horizontal">
+    <input [(ngModel)]="user.id" #id="ngModel" type="hidden" name="id">
+    <div class="form-group">
+      <label for="firstName" class="col-sm-2 control-label">First Name</label>
+      <div class="col-sm-10">
+        <input [(ngModel)]="user.firstName" #first_name="ngModel" type="text" class="form-control" id="firstName" name="firstName" placeholder="First Name" required minlength="2" maxlength="30">
+          <span *ngIf="formErrors.firstName" class="text-danger">
+            {{ formErrors.firstName }}
+          </span>
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="lastName" class="col-sm-2 control-label">Last Name</label>
+      <div class="col-sm-10">
+        <input [(ngModel)]="user.lastName" type="text" class="form-control" id="lastName" name="lastName"  placeholder="Last Name" required minlength="2" maxlength="30">
+          <span *ngIf="formErrors.lastName" class="text-danger">
+            {{ formErrors.lastName }}
+          </span>
+      </div>
+    </div>
+      <div class="form-group">
+      <label for="email" class="col-sm-2 control-label">Email</label>
+      <div class="col-sm-10">
+        <input [(ngModel)]="user.email" type="text" class="form-control" id="email" name="email"  placeholder="Email" required minlength="2" maxlength="30">
+          <span *ngIf="formErrors.email" class="text-danger">
+            {{ formErrors.email }}
+          </span>
+      </div>
+    </div>
+   
+   
+    
+    <div class="form-group">
+      <div class="col-sm-offset-2 col-sm-10">
+          <button [disabled]="!profileForm.form.valid" type="submit" class="btn btn-primary">Submit Changes</button>
+      </div>
+    </div>
+  </form>
+</section>

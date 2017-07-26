@@ -1,0 +1,18 @@
+#editprofile {
+    margin-top: 75px;
+    position: relative;
+    margin: 5% auto;
+    margin-left: 33%;
+    width: 500px;
+    height: 600px;
+    background: lightgray;
+    font-family: 'Roboto', sans-serif;
+
+    border-radius: 2px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+}
+
+.auth-link {
+    align-items: center;
+    align-content: center;
+}

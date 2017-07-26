@@ -23,7 +23,7 @@ export class RegisterComponent implements OnInit {
 
   successMessage: string;
   errorMessage: string;
-  people: object = {};
+  user: object = {};
 
   constructor(
     private userService: UserService,
@@ -36,15 +36,16 @@ export class RegisterComponent implements OnInit {
   
   }
   
-  
-  saveUser(id){
-      this.userService.addPeople("user", this.people)
-          .subscribe(
-            error =>  this.errorMessage = <any>error);
-    
+  saveUser(form: NgForm){
 
-    this.people = {};
-    this.router.navigate(['/home'])
+      this.userService.addPeople("person", form.value)
+          .subscribe(
+            user => {
+                localStorage.setItem('currentUser', JSON.stringify(user))
+                this.router.navigate(['/home'])
+            },
+            error =>  this.errorMessage = <any>error
+            )
 
   }
 

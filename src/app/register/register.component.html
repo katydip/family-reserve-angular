@@ -1,7 +1,7 @@
-  
+<div id="background">
  <div id="login-box">
   <div class="left">
-     <h1>Sign up for Family Reserve</h1>
+     <h1>Register for Family Reserve</h1>
         <a routerLink="/signin" class="auth-link">Already have a Family Reserve account? Sign in!</a>
 
   <div [ngClass]="(errorMessage)?'alert alert-danger':'alert alert-success'" role="alert" *ngIf="errorMessage">
@@ -11,13 +11,11 @@
       </button>
   </div>
 
-  <form (ngSubmit)="saveUser(people.id)"  #peopleForm="ngForm" class="form-horizontal">
-    <input [(ngModel)]="people.id" #id="ngModel" type="hidden" name="id">
-   
+  <form (ngSubmit)="saveUser(peopleForm)"  #peopleForm="ngForm" class="form-horizontal">
     <div class="form-group">
      <label for="firstName" class="col-sm-2 control-label">First Name</label>
       <div class="col-sm-10">
-        <input [(ngModel)]="people.firstName" #firstName="ngModel" type="text" class="form-control" id="firstName" name="firstName" placeholder="First Name" required minlength="2" maxlength="30">
+        <input ngModel #firstName="ngModel" type="text" class="form-control" id="firstName" name="firstName" placeholder="First Name" required minlength="2" maxlength="30">
           <span *ngIf="formErrors.firstName" class="text-danger">
             {{ formErrors.firstName }}
           </span>
@@ -26,7 +24,7 @@
     <div class="form-group">
       <label for="lastName" class="col-sm-2 control-label">Last Name</label>
       <div class="col-sm-10">
-        <input [(ngModel)]="people.lastName" type="text" class="form-control" id="lastName" name="lastName"  placeholder="Last Name" required minlength="2" maxlength="30">
+        <input ngModel type="text" class="form-control" id="lastName" name="lastName"  placeholder="Last Name" required minlength="2" maxlength="30">
           <span *ngIf="formErrors.lastName" class="text-danger">
             {{ formErrors.lastName }}
           </span>
@@ -35,7 +33,7 @@
     <div class="form-group">
       <label for="userName" class="col-sm-2 control-label">User Name</label>
       <div class="col-sm-10">
-        <input [(ngModel)]="people.userName" type="text" class="form-control" id="userName" name="userName" placeholder="User Name" required minlength="2" maxlength="30">
+        <input ngModel type="text" class="form-control" id="userName" name="userName" placeholder="User Name" required minlength="2" maxlength="30">
           <span *ngIf="formErrors.userName" class="text-danger">
             {{ formErrors.userName }}
           </span>
@@ -44,7 +42,7 @@
     <div class="form-group">
       <label for="password" class="col-sm-2 control-label">Password</label>
       <div class="col-sm-10">
-        <input [(ngModel)]="people.password" type="text" class="form-control" id="password" name="password" placeholder="password" required minlength="2" maxlength="30">
+        <input ngModel type="text" class="form-control" id="password" name="password" placeholder="password" required minlength="2" maxlength="30">
         <span *ngIf="formErrors.password" class="text-danger">
             {{ formErrors.password }}
           </span>
@@ -53,7 +51,7 @@
     <div class="form-group">
       <label for="email" class="col-sm-2 control-label">Email</label>
       <div class="col-sm-10">
-        <input [(ngModel)]="people.email" type="text" class="form-control" id="email" name="email" placeholder="user@email.com" required minlength="2" maxlength="30">
+        <input ngModel type="text" class="form-control" id="email" name="email" placeholder="user@email.com" required minlength="2" maxlength="30">
         <span *ngIf="formErrors.email" class="text-danger">
             {{ formErrors.email }}
         </span>
@@ -69,8 +67,10 @@
   </form>
     </div>
     </div>
+      </div>
 
-      <div class="or">OR</div>
+
+      <!--<div class="or">OR</div>
   
   <div class="right">
     <span class="loginwith">Sign in with<br />social network</span>
@@ -78,4 +78,4 @@
     <button class="social-signin facebook">Log in with facebook</button>
     <button class="social-signin twitter">Log in with Twitter</button>
     <button class="social-signin google">Log in with Google+</button>
-  </div>
+  </div>-->

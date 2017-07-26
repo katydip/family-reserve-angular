@@ -34,8 +34,7 @@ export class SigninComponent {
   ) {}
 
   
-  
-
+//to log in and put the user object into local storage
   login(user){
     console.log(user.value)
       this.userService.getlogin("session/new", user.value)
@@ -45,17 +44,12 @@ export class SigninComponent {
               console.log(user)
               localStorage.setItem('currentUser', JSON.stringify(this.user))
               //to pull up on other page
-              //this.user = JSON.parse(localStorage.getItem('currentUser))
+              // this.user = JSON.parse(localStorage.getItem('currentUser'))
               this.router.navigate(['/home'])
              
             },
             error =>  this.errorMessage = <any>error
           )
-
-
-    // this.user = {};
-    // this.userForm.reset();
-
   }
 
 
@@ -89,9 +83,6 @@ export class SigninComponent {
     }
   }
 
-  // localStorage.setItem('user', 'asdflsadlfjk')
-  // localStorage.getItem('user')
-  // localStorage.removeItem('user')
   
   formErrors = {
     "userName": "",

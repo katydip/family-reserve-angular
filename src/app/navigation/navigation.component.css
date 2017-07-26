@@ -1,20 +1,25 @@
-#links {
+.navbar {
+    background-color: lightgrey;
+}
+
+li {
     list-style-type: none;
     overflow: hidden;
 }
 
-li {
-    float: left;
-}
-
 li a {
     display: block;
-    color: white;
+    font-size: 22px;
+    color: black;
+    /*color: white*/
     text-align: center;
     padding: 16px;
     text-decoration: none;
 }
 
-li a:hover {
+/*li a:hover {
     background-color: gray;
+}*/
+.dropdown-menu li {
+    color: black;
 }

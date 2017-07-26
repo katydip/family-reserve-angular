@@ -4,25 +4,24 @@
   outline: none;
 }
 
-/*body {
+#background {
   margin: 0;
   padding: 0;
-  background: lightgray;
-  font-size: 16px;
+  background-image: url("../../assets/images/tree3.jpg");
+  /*font-size: 16px;
   color: #222;
   font-family: 'Roboto', sans-serif;
-  font-weight: 300;
-}*/
+  font-weight: 300;*/
+}
 
 #login-box {
   position: relative;
   margin: 5% auto;
-  margin-left: 150px;
+  /*margin-left: 150px;*/
   width: 500px;
   height: 600px;
   background: lightgray;
-    font-family: 'Roboto', sans-serif;
-
+  font-family: 'Roboto', sans-serif;
   border-radius: 2px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
 }
@@ -71,7 +70,7 @@ input[type="password"]:focus {
 
 
 
-.or {
+/*.or {
   position: absolute;
   top: 400px;
   left: 52%;
@@ -87,7 +86,7 @@ input[type="password"]:focus {
 .right {
   position: absolute;
   top: 0;
-  margin-top: 130px;
+  margin-top: 70px;
   margin-right: 150px;
   right: 0;
   box-sizing: border-box;
@@ -133,4 +132,4 @@ button.social-signin.twitter {
 
 button.social-signin.google {
   background: #DD4B39;
-}
+}*/

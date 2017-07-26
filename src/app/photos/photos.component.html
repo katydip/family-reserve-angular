@@ -26,7 +26,7 @@
 <div class="container-fluid">
   <div class="row cards text-center" id="stuff">
   <div *ngFor="let photo of photos; let i = index" class="col-sm-6 col-md-4 card">
-      <img width="200" height="200" src="{{ photo.url }}">
+      <img width="300" height="300" src="{{ photo.url }}">
         <p>{{ photo.title }}</p>
   </div>
  </div>
@@ -76,7 +76,7 @@
 </md-tab-group>
 <div>-->
 
-  <div class="modal fade" id="selectedImageModal" >
+  <!--<div class="modal fade" id="selectedImageModal" >
 	  <div class="modal-dialog" role="document">
 	    <div class="modal-content">
 	      <div class="modal-body">
@@ -104,4 +104,4 @@
   		  data-toggle="modal" data-target="#selectedImageModal"
                   (click)=setSelectedImage(photo)>
   	   </li>
-  	</ul>
+  	</ul>-->

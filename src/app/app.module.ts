@@ -31,12 +31,16 @@ import { UploadphotosComponent } from './uploadphotos/uploadphotos.component';
 import { UserService } from './user.service';
 import { FlickrService } from './flickr.service';
 import { NewuserComponent } from './newuser/newuser.component';
+import { ProfileComponent } from './profile/profile.component';
+import { EditprofileComponent } from './editprofile/editprofile.component';
+import { CreatefamilyComponent } from './createfamily/createfamily.component';
+import { JoinfamilyComponent } from './joinfamily/joinfamily.component';
+import { MyfamilyComponent } from './myfamily/myfamily.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-
     MapsComponent,
     NavigationComponent,
     SigninComponent,
@@ -44,7 +48,12 @@ import { NewuserComponent } from './newuser/newuser.component';
     PhotosComponent,
     RegisterComponent,
     UploadphotosComponent,
-    NewuserComponent
+    NewuserComponent,
+    ProfileComponent,
+    EditprofileComponent,
+    CreatefamilyComponent,
+    JoinfamilyComponent,
+    MyfamilyComponent
 
   ],
   imports: [
