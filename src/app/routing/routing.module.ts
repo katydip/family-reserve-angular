@@ -6,6 +6,7 @@ import { HomeComponent }   from '../home/home.component';
 import { PhotosComponent }   from '../photos/photos.component';
 import { RegisterComponent }   from '../register/register.component';
 import { MapsComponent }   from '../maps/maps.component';
+import { AddAddressFormComponent }   from '../add-address-form/add-address-form.component';
 
 
 
@@ -20,6 +21,7 @@ const routes: Routes = [
   { path: 'maps',  component: MapsComponent },
 //   { path: 'student/edit/:id', component: StudentFormComponent },
   { path: 'register/add', component: RegisterComponent },
+  { path: 'add-address-form', component: AddAddressFormComponent },
 
 //   { path: 'grade',  component: GradeComponent },
 //   { path: 'grade/edit/:id', component: GradeFormComponent },

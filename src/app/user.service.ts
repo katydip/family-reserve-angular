@@ -31,6 +31,34 @@ export class UserService {
     }
 
 
+    getRecord(endpoint: string, id): Observable<any> {
+            let apiUrl = `${this.baseUrl}${endpoint}/${id}`;
+            return this.http.get(apiUrl)
+                .map(this.extractData)
+                .catch(this.handleError);
+    }
+
+     getRecords(endpoint: string): Observable<object> {
+            let apiUrl = this.baseUrl+endpoint;
+            // let apiUrl = `${this.baseUrl}${endpoint}`;
+            return this.http.get(apiUrl)
+                .map(this.extractData)
+                .catch(this.handleError);
+    }
+
+    addAddress(endpoint: string, record:object): Observable<object> {
+        let apiUrl = `${this.baseUrl}${endpoint}`;
+        console.log(apiUrl)
+        return this.http.post(apiUrl, record)
+            .map(this.extractData)
+            .catch(this.handleError);
+
+    }
+
+
+
+
+
     private extractData(res: Response) {
         let results = res.json();
         return results || [];

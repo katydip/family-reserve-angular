@@ -27,6 +27,7 @@ import 'hammerjs';
 import { RegisterComponent } from './register/register.component';            //api
 import { UserService } from './user.service';
 import { FlickrService } from './flickr.service';
+import { AddAddressFormComponent } from './add-address-form/add-address-form.component';
 
 
 
@@ -39,7 +40,8 @@ import { FlickrService } from './flickr.service';
     SigninComponent,
     HomeComponent,
     PhotosComponent,
-    RegisterComponent
+    RegisterComponent,
+    AddAddressFormComponent
 
   ],
   imports: [

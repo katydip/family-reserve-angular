@@ -18,21 +18,20 @@
               [longitude]="lng"
               [zoom] = "zoom"
               [disableDefaultUI] = false
-              [zoomControl] = "false"
-              (mapClick) = "mapClicked($event)">
+              [zoomControl] = "true"
+              [scrollwheel] = false
+          >
 
             <agm-marker 
-              *ngFor = "let m of markers; let i = index"
-              (markerClick) = "clickedMarker(m, i)"
+              *ngFor = "let m of markers"
               [latitude]="m.lat" 
               [longitude]="m.lng">
 
-              <agm-info-window>
-                {{m.name}}
-                {{m.lat}}
-                {{m.lng}}
-                
-              </agm-info-window>  
+                <agm-info-window>
+                  {{m.name}}<br/>
+                  {{m.streetAddress}}<br/>
+                  {{m.city}}, {{m.state}} {{m.zip}}
+                </agm-info-window>  
               </agm-marker>
           </agm-map>
 
