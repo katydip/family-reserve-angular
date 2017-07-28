@@ -1,46 +1,35 @@
+<div id="fullhomepage">
+ <div class="container-fluid" id="homediv">
+    <div class="row cards text-center" id="myfamilies">
+       <h2>{{user.firstName}}'s Families</h2>
+       <h4 *ngIf="families[0] !== null">Select which page you wish to view</h4>
+      <h4 *ngIf="families[0] == null">It looks like you're new here. Join or Create your group below.</h4>
 
-<div class="jumbotron">
-  <div class="container">
-   <h1>Welcome to the Family Reserve</h1>
-  </div>
-</div>
-
- <div class="container-fluid">
-     <h2 class="center"> Families you belong to: </h2>
-  <div class="row cards text-center" id="myfamilies">
-  <div *ngFor="let family of families" class="col-sm-6 col-md-4 card" [routerLink]="['/myfamily']">
-      <img width="300" height="300" src="../../assets/images/family1.jpg">
-         <h3>{{family.name}}</h3>
-        <p>{{family.id}}</p>
-  </div>
- </div>
- </div>
-
-<!--<div class="row">
-  <div class="col-sm-6 col-md-4">
-    <div *ngFor="let family of families" class="thumbnail" [routerLink]="['/myfamily']">
-      <img src="../../assets/images/family3.jpg">
-      <div class="caption">
-        <h3>{{family.name}}</h3>
-        <p>{{family.id}}</p>
+    <div *ngIf="families[0] !== null">
+      <div *ngFor="let family of families" class="col-sm-6 col-md-4 card" id="famcards" (click)="clickFamily(family?.id)" role="button" >
+        <h3>{{family?.name}}</h3>        
+          <!--<img width="200" height="200" src="../../assets/images/family1.jpg">-->
+      </div>
       </div>
     </div>
-  </div>
-</div>-->
+ </div>
+
+
          
-    <div class="row">
-      <div class="col-xs-6 col-md-3">
-        <a href="#" class="thumbnail" [routerLink]="['/createfamily']">Create a Family<img width="100" height="100" src="../../assets/images/create1.jpg" alt="...">
+    <div class="row" id="famchoice">
+      <div class="col-xs-2 col-md-2" class="familyaction">
+        <a href="#" class="thumbnail" [routerLink]="['/createfamily']">Create Family
+        <img width="130" height="125" src="../../assets/images/create2.jpg" alt="...">
         </a>
       </div>
 
-      <div class="col-xs-6 col-md-3">
-        <a href="#" class="thumbnail" [routerLink]="['/joinfamily']">Join a Family<img width="100" height="100" src="../../assets/images/joinfam1.jpg" alt="...">
+      <div class="col-xs-2 col-md-2" class="familyaction">
+        <a href="#" class="thumbnail" [routerLink]="['/joinfamily']">Join Family<img width="125" height="125" src="../../assets/images/joinfam1.jpg" alt="...">
         </a>
       </div>
     </div>
 
-
+</div>
 
 
 

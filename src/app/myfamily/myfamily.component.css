@@ -1,0 +1,34 @@
+.myfamilycontent {
+    margin-top: 100px;
+}
+#myfamjumbo {
+    width: 35%;
+    float: left;
+}
+#myfamjumbo h2 {
+    text-align: center;
+}
+
+#photopage {
+    width: 20%;
+    margin-left: 5%;
+    margin-right: 5%;
+
+    float: left;
+}
+
+#fampage {
+    margin-top: 100px;
+}
+
+#memberpanel {
+    width: 20%;
+    /*margin-left: 10px;*/
+    float: left;
+    margin-left: 5%;
+    margin-right: 5%;
+
+}
+/*#stuff {
+    height: 300px;
+}*/

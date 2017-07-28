@@ -14,6 +14,9 @@ import { CreatefamilyComponent } from '../createfamily/createfamily.component';
 import { JoinfamilyComponent } from '../joinfamily/joinfamily.component';
 import { MyfamilyComponent } from '../myfamily/myfamily.component';
 import { AddAddressFormComponent }   from '../add-address-form/add-address-form.component';
+import { RecipesComponent } from '../recipes/recipes.component';
+import { ViewrecipesComponent } from '../viewrecipes/viewrecipes.component';
+
 
 
 
@@ -38,7 +41,11 @@ const routes: Routes = [
   { path: 'profile/edit', component: EditprofileComponent },
   { path: 'createfamily', component: CreatefamilyComponent },
   { path: 'joinfamily', component: JoinfamilyComponent },
-  { path: 'myfamily', component: MyfamilyComponent }
+  { path: 'myfamily', component: MyfamilyComponent },
+  { path: 'recipes', component: RecipesComponent },
+  { path: 'viewrecipes', component: ViewrecipesComponent }
+
+
 
 
  

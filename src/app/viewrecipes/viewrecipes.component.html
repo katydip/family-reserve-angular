@@ -1,0 +1,18 @@
+
+ <div class="container-fluid" id="recipebox">
+   <div class="row cards text-center" id="recipecard">
+       <div *ngFor="let recipe of recipeArray" class="col-sm-4">
+
+      <h2>{{user.firstName}}'s famous {{recipe.title}}</h2>
+    <div id="recipecontent">
+      <div class="well">Cook Time:    <b>{{recipe.cookTime}}</b></div>
+      <div class="well">Serves:   <b> {{recipe.serves}}</b></div>
+      <div class="well">Ingredients:    <b>{{recipe.ingredients}}</b></div>
+      <div class="well">Preparation:    <b>{{recipe.preps}}</b></div>
+      <div class="well">Directions:    <b>{{recipe.directions}}</b></div>
+    </div>
+    </div>
+  </div>
+ </div>
+
+

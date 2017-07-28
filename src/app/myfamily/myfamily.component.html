@@ -1,3 +1,80 @@
-<p>
-  myfamily works!
-</p>
+<div class="myfamilycontent">
+
+  <!--this is the list of family members-->
+  <div class="panel panel-default" id="memberpanel">
+    <div class="panel-heading">
+      <h3 class="panel-title">{{userfamily.name}} Members</h3>
+    </div>
+
+    <ul class="list-group">
+      <li>
+        <a *ngFor="let member of members" href="#" class="list-group-item">
+          <div class="row"><span class="glyphicon glyphicon-user" aria-hidden="true"></span>{{member.firstName}} {{member.lastName}}</div>
+          <div class="row"><span class="glyphicon glyphicon-envelope" aria-hidden="true"></span>{{member.email}}</div>
+        </a>
+      </li>
+    </ul>
+
+  </div>
+
+  <div class="jumbotron" id="myfamjumbo">
+    <h2>Welcome to {{userfamily.name}} homepage!</h2>
+    <form #input="ngForm" (ngSubmit)="createPost(input)" novalidate>
+      <input name="content" ngModel required #content="ngModel" class="form-control" placeholder="What would you like to say?...">
+      <button>Post</button>
+    </form>
+
+    <div class="media">
+      <div class="media-body">
+        <h4 class="media-heading">Recent Activity:</h4>
+        <ul class="list-group">
+          <li>
+            <a *ngFor="let post of postcontent" href="#" class="list-group-item">
+              <div class="row">{{post.postedBy.firstName}} {{post.postedBy.lastName}}:</div>
+              <div class="row">{{post.content}}</div>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <!-- /.jumbotron -->
+
+  <div class="container-fluid" id="photopage">
+    <div class="row cards text-center" id="stuff">
+      <div *ngFor="let photo of photos; let i = index" class="col-sm-6 card">
+        <img width="150" height="150" src="{{ photo.url }}">
+      </div>
+    </div>
+    <a class="btn btn-primary" routerLink="/uploadphotos">Upload Photos</a>
+    <a class="btn btn-primary" routerLink="/photos">View full Gallery</a>
+
+  </div>
+
+
+
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+<!--<div class="row">
+  <div class="col-md-12">.col-md-12</div>
+</div>
+<div class="row">
+  <div class="col-md-6">.col-md-6</div>
+</div>
+<div class="row">
+  <div class="col-md-4">.col-md-4</div>
+</div>
+<div class="row">
+  <div class="col-md-1">.col-md-1</div>
+</div>-->
