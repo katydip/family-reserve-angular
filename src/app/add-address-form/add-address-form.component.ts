@@ -19,6 +19,7 @@ export class AddAddressFormComponent implements OnInit {
   successMessage: string;
   errorMessage: string;
   personName;
+  user = JSON.parse(localStorage.getItem("currentUser"));
 
   address: object = {};
 
@@ -29,21 +30,12 @@ export class AddAddressFormComponent implements OnInit {
   ) {}
 
   ngOnInit() {
-    localStorage.setItem('currentUserID', '22');
-    
-    let currentPerson = JSON.parse(localStorage.getItem('currentUser'))
-    
-    // this.userService.getRecord('address/person', currentPerson.id)
-    //   .subscribe(
-    //     personName => {
-    //       (currentPerson.firstName + " " +  currentPerson.lastName)
-    //     })  
   }
 
 
   addAddress(form: NgForm){
     console.log(form.value)
-    form.value.person = { id: 22 }
+    form.value.person = { id: this.user.id }
     console.log(form.value)
     this.userService.addAddress(`address/`, form.value)
         .subscribe(
@@ -51,9 +43,6 @@ export class AddAddressFormComponent implements OnInit {
           error =>  this.errorMessage = <any>error);
     }
 }
-
-
-
 
 
 

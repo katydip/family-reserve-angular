@@ -8,8 +8,9 @@
 <br><br><br>
 
 <a class="btn btn-primary" routerLink="/address">Return to Address</a>-->
-
-<h1>Manage Address</h1>
+<div id="pagetop">
+  <h1>Manage Address</h1>
+</div> 
 
 
 <div [ngClass]="(errorMessage)?'alert alert-danger':'alert alert-success'" role="alert" *ngIf="errorMessage || successMessage">
@@ -41,7 +42,7 @@
   <div class="form-group">
     <label for="zip" class="col-sm-2 control-label">ZIP</label>
     <div class="col-sm-10">
-      <input type="text" ngModel #zip="ngModel" class="form-control" id="zip" name="zip">
+      <input type="text" ngModel #zipCode="ngModel" class="form-control" id="zip" name="zipCode">
     </div>
   </div>
   

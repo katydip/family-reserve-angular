@@ -38,6 +38,7 @@ import { EditprofileComponent } from './editprofile/editprofile.component';
 import { CreatefamilyComponent } from './createfamily/createfamily.component';
 import { JoinfamilyComponent } from './joinfamily/joinfamily.component';
 import { MyfamilyComponent } from './myfamily/myfamily.component';
+import { CreateFamilyComponent } from './create-family/create-family.component';
 
 
 @NgModule({
@@ -56,7 +57,8 @@ import { MyfamilyComponent } from './myfamily/myfamily.component';
     EditprofileComponent,
     CreatefamilyComponent,
     JoinfamilyComponent,
-    MyfamilyComponent
+    MyfamilyComponent,
+    CreateFamilyComponent
 
   ],
   imports: [

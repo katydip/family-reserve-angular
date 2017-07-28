@@ -1,4 +1,4 @@
-<div style="text-align:center">
+<div id='pagetop' style="text-align:center">
   <h1>
     Where We Live!
   </h1>
@@ -7,37 +7,47 @@
 <!-- this creates a google map on the page with the given lat/lng from -->
 <!-- the component as the initial center of the map: -->
 
-<!--<div class="jumbotron">-->
-  <div class="container">
+<div class="container">
 
-    <div class = "row">
-      <div class = "col-md-12">
-        <div class = "map">
-          <agm-map 
-              [latitude]="lat" 
-              [longitude]="lng"
-              [zoom] = "zoom"
-              [disableDefaultUI] = false
-              [zoomControl] = "true"
-              [scrollwheel] = false
-          >
-
-            <agm-marker 
-              *ngFor = "let m of markers"
-              [latitude]="m.lat" 
-              [longitude]="m.lng">
-
-                <agm-info-window>
-                  {{m.name}}<br/>
-                  {{m.streetAddress}}<br/>
-                  {{m.city}}, {{m.state}} {{m.zip}}
-                </agm-info-window>  
-              </agm-marker>
-          </agm-map>
-
-        </div>  
+  <div class="row">
+    <div class="col-md-3" style="height:500px; overflow-y: scroll;">
+        <div class="panel panel-default" *ngFor = "let person of addressEntries" >
+        <div class="panel-heading">
+          <h3 class="panel-title">{{person.name}}</h3>
+        </div>
+        <div class="panel-body">
+          <ul class="list-group">
+            <li class="list-group-item" *ngFor="let address of person.addresses">
+              {{address.streetAddress}}<br/>
+              {{address.city}}, {{address.state}} {{address.zip}}
+            </li>
+          </ul>
+        </div>
       </div>
-    </div>  
-    
-  </div>    
-<!--</div>-->
+    </div>
+    <div class="col-md-9">
+     <agm-map 
+            [latitude]="lat" 
+            [longitude]="lng"
+            [zoom] = "zoom"
+            [disableDefaultUI] = false
+            [zoomControl] = "true"
+            [scrollwheel] = false
+        >
+
+          <agm-marker 
+            *ngFor = "let m of markers"
+            [latitude]="m.lat" 
+            [longitude]="m.lng">
+
+              <agm-info-window>
+                {{m.name}}<br/>
+                {{m.streetAddress}}<br/>
+                {{m.city}}, {{m.state}} {{m.zip}}
+              </agm-info-window>  
+            </agm-marker>
+        </agm-map>
+    </div>
+  </div>
+
+</div>    

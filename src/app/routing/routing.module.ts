@@ -10,7 +10,7 @@ import { UploadphotosComponent }   from '../uploadphotos/uploadphotos.component'
 import { NewuserComponent }   from '../newuser/newuser.component';
 import { ProfileComponent } from '../profile/profile.component';
 import { EditprofileComponent } from '../editprofile/editprofile.component';
-import { CreatefamilyComponent } from '../createfamily/createfamily.component';
+import { CreateFamilyComponent } from '../create-family/create-family.component';
 import { JoinfamilyComponent } from '../joinfamily/joinfamily.component';
 import { MyfamilyComponent } from '../myfamily/myfamily.component';
 import { AddAddressFormComponent }   from '../add-address-form/add-address-form.component';
@@ -36,7 +36,7 @@ const routes: Routes = [
   { path: 'uploadphotos',  component: UploadphotosComponent },
   { path: 'profile', component: ProfileComponent },
   { path: 'profile/edit', component: EditprofileComponent },
-  { path: 'createfamily', component: CreatefamilyComponent },
+  { path: 'create-family', component: CreateFamilyComponent },
   { path: 'joinfamily', component: JoinfamilyComponent },
   { path: 'myfamily', component: MyfamilyComponent }
 

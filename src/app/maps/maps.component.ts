@@ -25,7 +25,7 @@ export class MapsComponent {
   successMessage: string;
   familyMembers;
   personAddress;
-
+  user = JSON.parse(localStorage.getItem("currentUser"))
 
   markers: any[] = []
 
@@ -34,48 +34,50 @@ export class MapsComponent {
   markerLat: string;
   markerLng: string;
 
+  addressEntries: any[] = []
+
+  addressStreet: string;
+
+
   constructor(private userService: UserService, public dialog: MdDialog) { }
 
-
-  // ngOnInit(){}
-
-  ngOnInit() {
-    localStorage.setItem('currentFamilyID', '10')
-    localStorage.setItem('members', JSON.stringify(
-      [
-        {
-          "id": 1,
-        }
-      ]
-    ))
+  ngOnInit(){
     this.getAddresses();
   }
 
   getAddresses() {
-    let currentFamilyID = JSON.parse(localStorage.getItem('currentFamilyID'))
+    console.log("local user: ", this.user)
+    let currentFamilyID = this.user.families[0].id
+    console.log("family id: ", currentFamilyID)
     this.userService.getRecords(`family/${currentFamilyID}/members/`)
       .subscribe(
         familyMembers => {
           this.familyMembers = familyMembers
           for (let i = 0; i < this.familyMembers.length; i++) {
+            this.addressEntries.push({name: this.familyMembers[i].firstName + " " + this.familyMembers[i].lastName, addresses: []})
              this.userService.getRecord('address/person', this.familyMembers[i].id)
               .subscribe(
                 address => {
-                  for(let i=0; i < address.length; i++){
+                  
+                  for(let n=0; n < address.length; n++){
 
-                    let personName = (address[i].person.firstName + " " +  address[i].person.lastName)
+                    let personName = (address[n].person.firstName + " " +  address[n].person.lastName)
   
                     this.markers.push({ 
                       name: personName, 
-                      lat: address[i].latitude, 
-                      lng: address[i].longitude,
-                      streetAddress: address[i].streetAddress,
-                      city: address[i].city,
-                      state: address[i].state,
-                      zip: address[i].zip
+                      lat: address[n].latitude, 
+                      lng: address[n].longitude,
+                      streetAddress: address[n].streetAddress,
+                      city: address[n].city,
+                      state: address[n].state,
+                      zip: address[n].zip
                     })
+
+                    this.addressEntries[i].addresses.push(address[n])
+
+
                   }
-                  
+                  console.log(this.addressEntries)
                 },
                 error => console.log("we had an oops")
               )
