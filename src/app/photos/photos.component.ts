@@ -22,18 +22,22 @@ import 'rxjs/Rx';
 export class PhotosComponent implements OnInit {
 
   searchControl = new FormControl();
-  searchStr:string="";
 
   model$: Observable<any>;
   photos: Object;
   constructor(private _formBuilder: FormBuilder, private _flickrService: FlickrService) { }
 
     ngOnInit() {
+      this.displayPhotos()
+  }
+
+    displayPhotos(){
     this._flickrService.getPhotoSet()
       .subscribe(value => {
         this.photos = value;
       });
   }
+    
 
     likeMe(i) {
     if (this.photos[i].liked == 0)
@@ -41,6 +45,7 @@ export class PhotosComponent implements OnInit {
     else
       this.photos[i].liked = 0;
   }
+
   selectedImage;
  
    setSelectedImage(photo){
@@ -55,7 +60,6 @@ export class PhotosComponent implements OnInit {
 // }
    
   }
-
 
 
 //not need full flickr

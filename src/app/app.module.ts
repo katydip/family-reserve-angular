@@ -35,10 +35,11 @@ import { AddAddressFormComponent } from './add-address-form/add-address-form.com
 import { NewuserComponent } from './newuser/newuser.component';
 import { ProfileComponent } from './profile/profile.component';
 import { EditprofileComponent } from './editprofile/editprofile.component';
-import { CreatefamilyComponent } from './createfamily/createfamily.component';
 import { JoinfamilyComponent } from './joinfamily/joinfamily.component';
 import { MyfamilyComponent } from './myfamily/myfamily.component';
 import { CreateFamilyComponent } from './create-family/create-family.component';
+import { RecipesComponent } from './recipes/recipes.component';
+import { ViewrecipesComponent } from './viewrecipes/viewrecipes.component';
 
 
 @NgModule({
@@ -55,10 +56,11 @@ import { CreateFamilyComponent } from './create-family/create-family.component';
     NewuserComponent,
     ProfileComponent,
     EditprofileComponent,
-    CreatefamilyComponent,
     JoinfamilyComponent,
     MyfamilyComponent,
-    CreateFamilyComponent
+    CreateFamilyComponent,
+    RecipesComponent,
+    ViewrecipesComponent
 
   ],
   imports: [

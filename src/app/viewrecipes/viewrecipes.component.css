@@ -1,0 +1,35 @@
+.container-fluid {
+    margin-top: 75px;
+}
+
+/*#recipecard {
+  position: relative;
+  margin: 5% auto;
+  margin-left: 33%;
+  width: 500px;
+  height: auto;
+  background: lightgray;
+  font-family: 'Roboto', sans-serif;
+
+  border-radius: 2px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+
+}*/
+
+/*.left {
+  position: absolute;
+  top: 0;
+  left: 0px;
+  box-sizing: border-box;
+  padding: 50px;
+  width: 500px;
+  height: 400px;
+  opacity: 1;
+
+}
+
+.left h1 {
+  margin: 0 0 20px 0;
+  font-weight: bold;
+  font-size: 28px;
+}*/

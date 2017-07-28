@@ -15,10 +15,9 @@
 </div>-->
 
  <div class="container-fluid">
-     <!--<h2 class="center"> Families you belong to: </h2>-->
   <div class="row cards text-center" id="familyoptions">
-  <div *ngFor="let family of families" class="col-sm-6 col-md-4 card">
-      <img width="300" height="300" src="../../assets/images/family3.jpg">
+  <div *ngFor="let family of families" class="col-sm-4 col-md-3 card" id="joincard">
+      <img width="200" height="150" src="../../assets/images/family3.jpg">
          <h3>{{family.name}}</h3>
         <!--<p>{{family.id}}</p>-->
      <p><a (click)="clickFamily(family.id)" class="btn btn-primary" role="button">Request to Join Family</a></p>
