@@ -1,14 +1,14 @@
-<div id='pagetop' style="text-align:center">
-  <h1>
-    Where We Live!
-  </h1>
-</div>
+
 
 <!-- this creates a google map on the page with the given lat/lng from -->
 <!-- the component as the initial center of the map: -->
 
-<div class="container">
-
+<div class="container" id="mapandaddressbar">
+  <div id='pagetop' style="text-align:center">
+    <h1>
+      Where We Live!
+    </h1>
+  </div>  
   <div class="row">
     <div class="col-md-3" style="height:500px; overflow-y: scroll;">
         <div class="panel panel-default" *ngFor = "let person of addressEntries" >

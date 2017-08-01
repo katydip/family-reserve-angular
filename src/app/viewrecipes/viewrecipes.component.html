@@ -1,11 +1,11 @@
 
- <div class="container-fluid" id="recipebox">
+ <!--<div class="container-fluid" id="recipebox">
    <div class="row cards text-center" id="recipecard">
        <div *ngFor="let recipe of recipeArray" class="col-sm-4">
 
       <h2>{{user.firstName}}'s famous {{recipe.title}}</h2>
-    <div id="recipecontent">
-      <div class="well">Cook Time:    <b>{{recipe.cookTime}}</b></div>
+    <div id="recipecontent">-->
+      <!--<div class="well">Cook Time:    <b>{{recipe.cookTime}}</b></div>
       <div class="well">Serves:   <b> {{recipe.serves}}</b></div>
       <div class="well">Ingredients:    <b>{{recipe.ingredients}}</b></div>
       <div class="well">Preparation:    <b>{{recipe.preps}}</b></div>
@@ -13,6 +13,47 @@
     </div>
     </div>
   </div>
+ </div>-->
+
+ <!--<div class="container-fluid" id="recipebox">-->
+  
+  <!--<div *ngFor="let recipe of recipeArray" class="panel panel-default" id="recipepanel">
+      <div class="panel-heading">
+        <h3 class="panel-title">{{recipe.postedBy.firstName}}'s famous {{recipe.title}}</h3>
+      </div>
+        <ul class="list-group">
+          <li>
+            <a href="#" class="list-group-item">
+              <div class="row">Cook Time:    <b>{{recipe.cookTime}}</b></div>
+              <div class="row">Serves:   <b> {{recipe.serves}}</b></div>
+              <div class="row">Preparation:    <b>{{recipe.preps}}</b></div>
+              <div class="row">Ingredients:    <b>{{recipe.ingredients}}</b></div>
+              <div class="row">Directions:    <b>{{recipe.directions}}</b></div>
+            </a>
+          </li>
+        </ul>
+   </div>-->
+ <div class="container-fluid" id="recipebox">
+
+     <div *ngFor="let recipe of recipeArray" id="recipepanel">
+      <div>
+        <h3>{{recipe.postedBy.firstName}}'s {{recipe.title}}</h3>
+      </div>
+        <ul>
+          <li>
+              <div class="row">Cook Time:    <b>{{recipe.cookTime}}</b></div>
+              <div class="row">Serves:   <b> {{recipe.serves}}</b></div>
+              <div class="row">Preparation:    <b>{{recipe.preps}}</b></div>
+              <div class="row">Ingredients:    <b>{{recipe.ingredients}}</b></div>
+              <div class="row">Directions:    <b>{{recipe.directions}}</b></div>
+          </li>
+        </ul>
+   </div>
+   <div id="someoptions">
+      <a class="btn btn-primary" routerLink="/recipes">Share Recipe</a>
+      <a routerLink="/myfamily" class="auth-link">Back to the homepage.</a>
+      </div>
  </div>
+
 
 

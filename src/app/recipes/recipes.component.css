@@ -1,0 +1,19 @@
+#sharerec {
+    margin-top: 75px;
+  background-image: url("../../assets/images/breadrec.jpg");
+  height: 800px;
+}
+
+#recipe-box {
+position: relative;
+  margin: 5% auto;
+  width: 700px;
+  padding: 20px;
+  height: auto;
+  background: white;
+  font-family: 'Raleway', sans-serif;
+  border-radius: 2px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+}
+
+

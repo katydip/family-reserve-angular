@@ -5,18 +5,15 @@ import { FlickrService } from '../flickr.service';
 import { PhotosComponent } from '../photos/photos.component';
 import { ViewrecipesComponent } from '../viewrecipes/viewrecipes.component';
 
-
-
-// import _ from 'lodash'
 import {NgForm} from '@angular/forms';
 import { Observable } from 'rxjs/Observable';
+
 
 
 @Component({
   selector: 'app-myfamily',
   templateUrl: './myfamily.component.html',
   styleUrls: ['./myfamily.component.css'],
-
   providers: [FlickrService]
 
 })
@@ -28,6 +25,7 @@ export class MyfamilyComponent implements OnInit {
   postcontent: any[];
   model$: Observable<any>;
   photos: Object;
+  relatives: Object;
 
 
   userfamily = JSON.parse(localStorage.getItem("currentFamily"));
@@ -46,6 +44,7 @@ export class MyfamilyComponent implements OnInit {
     this.getPosts()
     setInterval(() => { this.getPosts() }, 5000)
     this.displayPhotos()
+
   }
 
   getMembers() {
@@ -54,6 +53,12 @@ export class MyfamilyComponent implements OnInit {
     this.userService.getRecords(membersEndpoint)
       .subscribe(
         members => this.members = members
+      )
+  }
+getRelation() {
+    this.userService.getRecords("relationType")
+      .subscribe(
+        relatives => this.relatives = relatives
       )
   }
 

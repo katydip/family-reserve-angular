@@ -1,34 +1,87 @@
+/** {
+    border: 1px dashed red;
+}*/
 .myfamilycontent {
-    margin-top: 100px;
+    margin-top: 80px;
+    font-family: 'Raleway', sans-serif;
+      background-image: url("../../assets/images/wood3.jpg");
+      padding-top: 20px;
 }
+
+#memberjumboandphotos {
+    display: flex;
+    flex-direction: row;
+    /*justify-content: space-around;*/
+    margin: 2%;
+}
+
+#memberpanelplustree {
+    display: flex;
+    flex-direction: column;
+    width: 25%;
+    margin-right: 5%;
+}
+#memberpanel {
+     background-color: seashell;
+
+}
+/*.panel-heading {
+        background-color: slategrey;
+}*/
+
 #myfamjumbo {
-    width: 35%;
-    float: left;
+    background-color: seashell;
 }
+
+#myfamjumbo form {
+    padding: 5%;
+}
+ 
 #myfamjumbo h2 {
     text-align: center;
+    align-content: top;
+    padding-bottom: 10px;
+    margin-top: 0px;
+}
+.list-group {
+    padding-left: 2%;
+    padding-right: 2%;
+}
+#postcontent {
+    font-size: 16px;
+    padding-top: 4px;
+    font-weight: bold;
 }
 
-#photopage {
-    width: 20%;
+
+#photoandrecipebox {
+    display: flex;
+    flex-direction: column;
     margin-left: 5%;
-    margin-right: 5%;
-
-    float: left;
+}
+#photobuttons {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
 }
 
-#fampage {
-    margin-top: 100px;
+#familyrecipebox {
+    margin-top: 15px;
+}
+#boxphoto #recipebuttons #treebutton {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
 }
 
-#memberpanel {
-    width: 20%;
-    /*margin-left: 10px;*/
-    float: left;
-    margin-left: 5%;
-    margin-right: 5%;
+ #photothumbnails {
+     height: 500px;
+ }
 
+
+#familyorgchart {
+    height: auto;
+    width: 100%;
+    /*margin-bottom: 0;*/
 }
-/*#stuff {
-    height: 300px;
-}*/
+

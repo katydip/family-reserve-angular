@@ -16,7 +16,8 @@
 #background {
   width: 100%;
   height: 100%;
-  background-image: url("../../assets/images/tree3.jpg");
+  background-image: url("../../assets/images/fam1.jpg");
+  background-repeat: no-repeat;
   /*opacity: 0.5;*/
 
 }
@@ -24,14 +25,16 @@
 #login-box {
   position: relative;
   margin: 5% auto;
-  margin-left: 33%;
+  margin-right: 0;
   width: 500px;
   height: 600px;
-  background: lightgray;
+      font-family: 'Raleway', sans-serif;
+
+  /*background: lightgray;
   font-family: 'Roboto', sans-serif;
 
   border-radius: 2px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);*/
 
 }
 

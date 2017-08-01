@@ -39,12 +39,12 @@ export class PhotosComponent implements OnInit {
   }
     
 
-    likeMe(i) {
-    if (this.photos[i].liked == 0)
-      this.photos[i].liked = 1;
-    else
-      this.photos[i].liked = 0;
-  }
+  //   likeMe(i) {
+  //   if (this.photos[i].liked == 0)
+  //     this.photos[i].liked = 1;
+  //   else
+  //     this.photos[i].liked = 0;
+  // }
 
   selectedImage;
  

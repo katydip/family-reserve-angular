@@ -40,6 +40,11 @@ import { MyfamilyComponent } from './myfamily/myfamily.component';
 import { CreateFamilyComponent } from './create-family/create-family.component';
 import { RecipesComponent } from './recipes/recipes.component';
 import { ViewrecipesComponent } from './viewrecipes/viewrecipes.component';
+import { RelationchartComponent } from './relationchart/relationchart.component';
+import { LogoComponent } from './logo/logo.component';
+import { FooterComponent } from './footer/footer.component';
+// import { GalleryComponent } from './gallery/gallery.component';
+// import { NgxGalleryModule } from 'ngx-gallery';
 
 
 @NgModule({
@@ -60,7 +65,11 @@ import { ViewrecipesComponent } from './viewrecipes/viewrecipes.component';
     MyfamilyComponent,
     CreateFamilyComponent,
     RecipesComponent,
-    ViewrecipesComponent
+    ViewrecipesComponent,
+    RelationchartComponent,
+    LogoComponent,
+    FooterComponent,
+    // GalleryComponent
 
   ],
   imports: [
@@ -80,10 +89,11 @@ import { ViewrecipesComponent } from './viewrecipes/viewrecipes.component';
     }),
     ImageUploadModule.forRoot(),
     FlexLayoutModule,
-    FileUploadModule
+    FileUploadModule,
+    // NgxGalleryModule
 
   ],
-  providers: [ UserService, FlickrService ],
+  providers: [ UserService, FlickrService],
   entryComponents: [AppComponent],
   bootstrap: [AppComponent]
 })

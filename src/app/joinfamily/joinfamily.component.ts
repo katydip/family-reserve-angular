@@ -21,14 +21,14 @@ export class JoinfamilyComponent implements OnInit {
 
   ngOnInit() { this.getFamily(); }
 
+//  update this route to the new one Elizabeth added
   getFamily() {
-    this.userService.getRecords("family")
+    this.userService.getRecords(`familiesJoinable/${this.user.id}`)
       .subscribe(
       families => this.families = families,
       error => this.errorMessage = <any>error);
   }
 
-  //I probably need to check if they are already a member first?? 
   clickFamily(familyID) {
     console.log(familyID)
     this.userService.putFamily(`family/${familyID}/addMember`, this.user, this.user.id)

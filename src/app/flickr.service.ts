@@ -11,32 +11,31 @@ import 'rxjs/add/operator/map';
 export class FlickrService {
     result$: Observable<any>;
     searchStr:string="";
-    // API_KEY:string = 'bc39f561acb94d42e4f6745fbd8f5258'; 
-    // API_KEY:string = 'd07b16ad52f827ad2b2d3f00964eaa88'; //given in url for userId.. 
-    // API_KEY:string = 'ffe789782fca60a2b4190b31a2e71278'; 
-    API_KEY:string = '2f64d74fdbcceaac432cd9f7a82517e5'; //7/27
-    // 2f64d74fdbcceaac432cd9f7a82517e5
-
-    //need to do this- https://www.flickr.com/services/api/auth.oauth.html
-
+    API_KEY:string = 'bc39f561acb94d42e4f6745fbd8f5258'; 
+    // API_KEY:string = '14994975868e510312ec4f51dfc7701a'; 
+    auth_token:string ='72157687029607965-d4b12694250504c7';
+    api_sig:string = '4c7bc7f6d1572c88a94b82f669d10866';
+  
     secret:string = 'caef0a5bc45c84d5';
     photoset_id;
     user_id="156828599%40N08";
     uploadUrl="https://up.flickr.com/services/upload/";
     uploadphoto="";
+    oauth_signature_method="HMAC-SHA1"
 
     userfamily = JSON.parse(localStorage.getItem("currentFamily"));
+
+ 
+
+// http://flickr.com/services/auth/?api_key=xxx&api_sig=yyy&auth_token=zzz&method=method_name
 
 // https://api.flickr.com/services/rest/?method=flickr.photosets.getPhotos&api_key=8fd2e675c10eff2b972f74b482a0180e&photoset_id=72157686697155276
 // &user_id=156828599%40N08&format=json&nojsoncallback=1&auth_token=72157686759334066-816884f8b26c7f95&api_sig=5be6b7df2dfb0b20744944582decdf84
    
-//    https://api.flickr.com/services/rest/?method=flickr.photosets.getPhotos&api_key=8fd2e675c10eff2b972f74b482a0180e&photoset_id=72157686697155276
-//    &user_id=156828599%40N08&format=json&nojsoncallback=1
-   
     constructor(private _http: Http) { };
 
     getPhotoSet() {
-        let photosetUrl = "https://api.flickr.com/services/rest/?method=flickr.photosets.getPhotos&api_key=" + this.API_KEY + "&photoset_id=" + this.userfamily.photoSetId + "&user_id=" + this.user_id + "&per_page=12&format=json&nojsoncallback=1";
+        let photosetUrl = "https://api.flickr.com/services/rest/?method=flickr.photosets.getPhotos&api_key=" + this.API_KEY + "&photoset_id=" + this.userfamily.photoSetId + "&user_id=" + this.user_id + "&per_page=48&format=json&nojsoncallback=1";
         return this._http
             .get(photosetUrl)
             .map(res => res.json())
@@ -63,28 +62,3 @@ uploadPhoto(){
 
 }
 
-//ideas... 
-// api({
-//   method: 'upload',
-//   title: 'Christmas morning',
-//   description: "Christmas at home!",
-//   is_public: 0,
-//   is_friend: 1,
-//   is_family: 1,
-//   hidden: 2,
-//   photo: fs.createReadStream(fullpath)
-// }, function(err, response) {
-//   if (err) {
-//     console.error('Could not upload photo:', err);
-//   }
-//   else {
-//     var new_photo_id = response.photoid._content;
-//     // usually, the method name is precisely the name of the API method, as they are here: 
-//     api({method: 'flickr.photos.getInfo', photo_id: new_photo_id}, function(err, response) {
-//       console.log('Full photo info:', response);
-//       api({method: 'flickr.photosets.addPhoto', photoset_id: 72157683717828503, photo_id: new_photo_id}, function(err, response) {
-//         console.log('Added photo to photoset:', response);
-//       });
-//     });
-//   }
-// });

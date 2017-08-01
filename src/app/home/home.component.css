@@ -1,6 +1,18 @@
 #fullhomepage {
     margin-top: 75px;
-    background-color: lightgrey;
+    background-image: url("../../assets/images/wood3.jpg");
+    /*background-color: seashell;*/
+    font-family: 'Raleway', sans-serif;
+    height: 700px;
+
+}
+#myfamilies h2 {
+    font-size: 40px;
+    color: seashell;
+    font-weight: bold;
+}
+#myfamilies h4 {
+    color: seashell;
 }
 
 .thumbnail {
@@ -11,19 +23,21 @@
 }
 
 #famcards {
-    border: 5px solid black;
+    border: 10px solid seashell;
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
-    align-items: center;
-    width: 300px;
-    height: 300px;
+    align-items: top;
+    width: 275px;
+    height: 215px;
     margin: 5px;
     margin-left: 3%;
-    background-image: url("../../assets/images/tree3.jpg");
+    background-image: url("../../assets/images/feetsmall.jpg");
+    background-repeat: no-repeat;
+    
 }
 #famcards h3 {
-    font-size: 36px;
+    font-size: 32px;
     font-weight: bold;
     color: black;
     list-style-type: none;

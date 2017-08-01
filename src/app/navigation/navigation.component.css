@@ -1,5 +1,7 @@
 .navbar {
-    background-color: lightgrey;
+    background-color: white;
+    padding: 5px;
+    font-family: 'Raleway', sans-serif;
 }
 
 li {
@@ -11,15 +13,8 @@ li a {
     display: block;
     font-size: 22px;
     color: black;
-    /*color: white*/
     text-align: center;
     padding: 16px;
     text-decoration: none;
 }
 
-/*li a:hover {
-    background-color: gray;
-}*/
-.dropdown-menu li {
-    color: black;
-}

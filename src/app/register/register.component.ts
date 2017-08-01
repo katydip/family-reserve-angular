@@ -36,6 +36,8 @@ export class RegisterComponent implements OnInit {
   
   }
   
+  // need to add validation and error messages, currently giving user a 404 for bad password
+  // also make password private? and confirm pw?
   saveUser(form: NgForm){
 
       this.userService.addPeople("person", form.value)
@@ -46,7 +48,6 @@ export class RegisterComponent implements OnInit {
             },
             error =>  this.errorMessage = <any>error
             )
-
   }
 
 

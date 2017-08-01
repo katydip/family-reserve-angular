@@ -1,37 +1,46 @@
 <div class="myfamilycontent">
 
-  <!--this is the list of family members-->
+<div id="memberjumboandphotos">
+  <div id="memberpanelplustree">
   <div class="panel panel-default" id="memberpanel">
     <div class="panel-heading">
-      <h3 class="panel-title">{{userfamily.name}} Members</h3>
+      <h3 class="panel-title">Your family</h3>
+    </div>
+      <ul class="list-group" style="height:500px; overflow-y: scroll;" >
+        <li>
+          <a *ngFor="let member of members" href="#" class="list-group-item">
+            <div class="row"><span class="glyphicon glyphicon-user" aria-hidden="true"></span>{{member.firstName}} {{member.lastName}}</div>
+          </a>
+        </li>
+        <li>
+          <a *ngFor="let relative of relatives" href="#" class="list-group-item">
+            <div class="row"><span class="glyphicon glyphicon-user" aria-hidden="true"></span>{{member.firstName}} {{member.lastName}}</div>
+          </a>
+        </li>
+      </ul>
+  </div>
+   <div class="container-fluid" id="familyorgchart">
+          <img width="250" height="250" src="../../assets/images/famtree7.jpg">
+      <div id="treebutton"><a class="btn btn-default" routerLink="/relationchart">Family Tree</a></div>
+    </div>
     </div>
 
-    <ul class="list-group">
-      <li>
-        <a *ngFor="let member of members" href="#" class="list-group-item">
-          <div class="row"><span class="glyphicon glyphicon-user" aria-hidden="true"></span>{{member.firstName}} {{member.lastName}}</div>
-          <div class="row"><span class="glyphicon glyphicon-envelope" aria-hidden="true"></span>{{member.email}}</div>
-        </a>
-      </li>
-    </ul>
-
-  </div>
-
+  
   <div class="jumbotron" id="myfamjumbo">
     <h2>Welcome to {{userfamily.name}} homepage!</h2>
     <form #input="ngForm" (ngSubmit)="createPost(input)" novalidate>
-      <input name="content" ngModel required #content="ngModel" class="form-control" placeholder="What would you like to say?...">
+      <input name="content" ngModel required #content="ngModel" class="form-control" placeholder="What would you like to share?...">
       <button>Post</button>
     </form>
 
     <div class="media">
       <div class="media-body">
         <h4 class="media-heading">Recent Activity:</h4>
-        <ul class="list-group">
+        <ul class="list-group" style="height:500px; overflow-y: scroll;" >
           <li>
             <a *ngFor="let post of postcontent" href="#" class="list-group-item">
-              <div class="row">{{post.postedBy.firstName}} {{post.postedBy.lastName}}:</div>
-              <div class="row">{{post.content}}</div>
+              <div class="row">{{post.postedBy.firstName}} {{post.postedBy.lastName}} on {{post.postDate}}:</div>
+              <div class="row" id="postcontent">{{post.content}}</div>
             </a>
           </li>
         </ul>
@@ -39,19 +48,54 @@
     </div>
   </div>
   <!-- /.jumbotron -->
+<div id="photoandrecipebox">
 
   <div class="container-fluid" id="photopage">
-    <div class="row cards text-center" id="stuff">
+    
+    <!--<div class="row cards text-center" id="photothumbnails" style="height:500px; overflow-y: scroll;">
       <div *ngFor="let photo of photos; let i = index" class="col-sm-6 card">
-        <img width="150" height="150" src="{{ photo.url }}">
+        <img width="170" height="150" src="{{ photo.url }}">
       </div>
     </div>
-    <a class="btn btn-primary" routerLink="/uploadphotos">Upload Photos</a>
-    <a class="btn btn-primary" routerLink="/photos">View full Gallery</a>
+    <div id="photobuttons">
+    <a class="btn btn-default" routerLink="/uploadphotos">Upload Photos</a>
+    <a class="btn btn-default" routerLink="/photos">View full Gallery</a>
+    </div>-->
 
+  <div class="panel panel-default" id="photopage">
+    <div class="panel-heading">
+      <h3 class="panel-title">Gallery</h3>
+    </div>
+      <ul class="list-group" style="height:500px; overflow-y: scroll;" >
+        <li>
+          <a *ngFor="let photo of photos; let i = index" href="#" class="col-sm-6 card">
+             <img width="160" height="150" src="{{ photo.url }}">
+          </a>
+        </li>
+      </ul>
+       <div id="photobuttons">
+        <a class="btn btn-default" routerLink="/photos">View full Gallery</a>
+        <a class="btn btn-default" routerLink="/uploadphotos">Upload Photos</a>
+    </div>
+  </div>
   </div>
 
 
+    <div class="container-fluid" id="familyrecipebox">
+      <div id="boxphoto">
+          <img width="250" height="250" src="../../assets/images/recipebox1.jpg">
+      </div>
+      <div id="recipebuttons">
+      <a class="btn btn-default" routerLink="/recipes">Share Recipe</a>
+      <a class="btn btn-default" routerLink="/viewrecipes">View Recipe Box</a>
+      </div>
+    </div>
+</div>
+   </div>
+
+<div id="mapsection">
+    <app-maps></app-maps>
+</div>
 
 
 </div>
@@ -66,15 +110,3 @@
 
 
 
-<!--<div class="row">
-  <div class="col-md-12">.col-md-12</div>
-</div>
-<div class="row">
-  <div class="col-md-6">.col-md-6</div>
-</div>
-<div class="row">
-  <div class="col-md-4">.col-md-4</div>
-</div>
-<div class="row">
-  <div class="col-md-1">.col-md-1</div>
-</div>-->

@@ -34,9 +34,11 @@ export class ViewrecipesComponent implements OnInit {
    
   }
 
-
+//this is to get all recipes. need to change path to only get that family recipes
 getRecipes() {
-    this.userService.getRecords("recipes")
+  let recipeEndpoint = `family/${this.userfamily.id}/recipes`
+    this.userService.getRecords(recipeEndpoint)
+
       .subscribe(
         recipeArray => this.recipeArray = recipeArray
       )

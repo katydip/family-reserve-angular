@@ -1,5 +1,10 @@
-#pagetop {
-  padding-top: 65px;
+#mapandaddressbar {
+    margin: 2%; 
+    width: 96%;
+    padding-bottom: 50px;
+}
+#pagetop h1 {
+  color: white;
 }
 
 agm-map {

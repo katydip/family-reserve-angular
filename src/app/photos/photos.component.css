@@ -1,6 +1,19 @@
 #gallery {
     text-align: center;
-	margin-top: 75px;
+	color: white;
+	font-size: 38px;
+	font-weight: bold;
+	text-shadow: 10px black;
+}
+#fullphotopage {
+    margin-top: 80px;
+    font-family: 'Raleway', sans-serif;
+      background-image: url("../../assets/images/wood3.jpg");
+      padding-top: 20px;
+}
+#stuff {
+	border: 5px solid seashell; 
+	margin-bottom: 12px;
 }
 /*
 .thumbnail {
@@ -12,7 +25,12 @@
       color: black;
      
 }*/
-ul { padding:0; width:780px; margin:20px auto}
+
+
+
+
+
+/*ul { padding:0; width:780px; margin:20px auto}
   	li { display:inline;}
         .tn{ 
 	   margin:2px 0px;
@@ -43,3 +61,4 @@ p {
    -webkit-margin-before: 5px !important;
    -webkit-margin-after: 5px !important;
 }
+*/

@@ -7,7 +7,7 @@ import { PhotosComponent }   from '../photos/photos.component';
 import { RegisterComponent }   from '../register/register.component';
 import { MapsComponent }   from '../maps/maps.component';
 import { UploadphotosComponent }   from '../uploadphotos/uploadphotos.component';
-import { NewuserComponent }   from '../newuser/newuser.component';
+// import { NewuserComponent }   from '../newuser/newuser.component';
 import { ProfileComponent } from '../profile/profile.component';
 import { EditprofileComponent } from '../editprofile/editprofile.component';
 import { CreateFamilyComponent } from '../create-family/create-family.component';
@@ -16,7 +16,7 @@ import { MyfamilyComponent } from '../myfamily/myfamily.component';
 import { AddAddressFormComponent }   from '../add-address-form/add-address-form.component';
 import { RecipesComponent } from '../recipes/recipes.component';
 import { ViewrecipesComponent } from '../viewrecipes/viewrecipes.component';
-
+import { RelationchartComponent } from '../relationchart/relationchart.component';
 
 
 
@@ -29,11 +29,8 @@ const routes: Routes = [
   { path: 'register',  component: RegisterComponent },
   { path: 'register/add', component: RegisterComponent },
 
-  { path: 'newuser',  component: NewuserComponent },
-
   { path: 'photos',  component: PhotosComponent },
   { path: 'maps',  component: MapsComponent },
-//   { path: 'student/edit/:id', component: StudentFormComponent },
   { path: 'register/add', component: RegisterComponent },
   { path: 'add-address-form', component: AddAddressFormComponent },
   { path: 'uploadphotos',  component: UploadphotosComponent },
@@ -43,9 +40,8 @@ const routes: Routes = [
   { path: 'joinfamily', component: JoinfamilyComponent },
   { path: 'myfamily', component: MyfamilyComponent },
   { path: 'recipes', component: RecipesComponent },
-  { path: 'viewrecipes', component: ViewrecipesComponent }
-
-
+  { path: 'viewrecipes', component: ViewrecipesComponent },
+  { path: 'relationchart', component: RelationchartComponent },
 
 
  

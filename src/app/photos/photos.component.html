@@ -1,107 +1,43 @@
 
-<!--<input type="file" (change)="fileChangeEvent($event)" placeholder="Upload file..." />
-<button type="button" (click)="upload()">Upload</button>-->
 
-
-<!--<div class="container">-->
-  <!--<div class="row">
-    <input type="search" [formControl]="searchControl"> 
-    <input type="text" [(ngModel)]="searchStr" ><button (click)="searchPhoto()">Search</button>
-  </div>-->
-  <!--<div class="row">
-    <div *ngFor="let photo of photos">
-      <div class="col-xs-6 col-md-3">
-          <div class="thumbnail">
-            <img src={{photo.url}}>
-            <span class="card-title">{{photo.title}}</span>
-          </div>
-      </div>
-    </di
-  </div>
-</div>-->
-
-
+<div id="fullphotopage">
 <h1 id="gallery">Gallery</h1>
-<!--new way with bootstrap.-->
+      <a routerLink="/myfamily" class="auth-link">Back to the homepage.</a>
+
 <div class="container-fluid">
-  <div class="row cards text-center" id="stuff">
-  <div *ngFor="let photo of photos; let i = index" class="col-sm-6 col-md-4 card">
-      <img width="300" height="300" src="{{ photo.url }}">
-        <p>{{ photo.title }}</p>
+  <div class="row cards text-center">
+  <div *ngFor="let photo of photos; let i = index" class="col-md-3 card">
+      <img id="stuff" width="300" height="300" src="{{ photo.url }}">
+        <!--<p>{{ photo.title }}</p>-->
   </div>
  </div>
  </div>
 
-  <a class="btn btn-primary" routerLink="/uploadphotos">Upload Photos</a>
+  <a class="btn btn-default" routerLink="/uploadphotos">Upload Photos</a>
+
+</div>
+ 
 
 
-    <!--https://www.npmjs.com/package/angular2-image-upload-->
-<!--<image-upload
-  [max]="100"
-  [url]="'example.com/images/upload'"
-  [headers]="[
-    {header: 'Authorization', value: 'MyToken'}
-  ]"
-  [buttonCaption]="'Add Photos!'"
-  [dropBoxMessage]="'Drag and drop your photos here!'"
-  [extensions]="['jpg','png','gif']"
-  (onFileUploadFinish)="imageUploaded($event)"
-  (onRemove)="imageRemoved($event)"
-  (isPending)="disableSendButton($event)"
-></image-upload>-->
-
-
-
-
-
-
-<!--old way with gallery
-<div>
-<md-tab-group>
-  <md-tab label="Gallery" class="tabs">
-    <md-card *ngFor="let photo of photos; let i = index">
-      <img md-card-image src="{{ photo.url }}">
-      <md-card-content>
-        <p>{{ photo.title }}</p>
-      </md-card-content>
-      <md-card-actions>
-        <button md-button (click)="likeMe(i)">
-            <i class="material-icons md-18" [class.red-color]="photos.liked == '1'">favorite</i> LIKE
-        </button>
-      </md-card-actions>
-    </md-card>
-  </md-tab>
-  <md-tab label="Settings" class="tabs">
-  </md-tab>
-</md-tab-group>
-<div>-->
-
-  <!--<div class="modal fade" id="selectedImageModal" >
+<!--attempt...-->
+<!--<div class="modal fade" id="selectedImageModal" >
 	  <div class="modal-dialog" role="document">
 	    <div class="modal-content">
 	      <div class="modal-body">
-	        <div class="selectedImage" *ngIf="selectedImage">
-   <img src="{{selectedImage.url}}" >
-   <div class="arrow-back" (click)=navigate(false)>
-      &lt;
-   </div>
-   <div class="arrow-forward" (click)=navigate(true)>
-      &gt;
-   </div>
-   <div class="caption">
-      <p><strong>{{selectedImage.title}}</strong></p>
-      <p>{{selectedImage.caption}}</p>
-   </div>
-</div>
+	         <img *ngIf="selectedImage" src="{{selectedImage.url}}" >
 	      </div>
 	    </div>
 	  </div>
 	</div>
   	<ul id="thumbnailsList">
-  	   <li *ngFor="let photo of photos; let i = index">
-  	      <img src="{{photo.url}}" class="tn"
+  	   <li *ngFor="let photo of photos" >
+  	      <img src="{{image.url}}" class="tn"
   		  width="191" height="146"  
   		  data-toggle="modal" data-target="#selectedImageModal"
-                  (click)=setSelectedImage(photo)>
+                  (click)=setSelectedImage(image)>
   	   </li>
   	</ul>-->
+
+
+
+  
