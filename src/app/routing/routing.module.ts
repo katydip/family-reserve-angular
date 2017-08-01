@@ -21,7 +21,7 @@ import { RelationchartComponent } from '../relationchart/relationchart.component
 
 
 const routes: Routes = [
-  { path: '', redirectTo: '/home', pathMatch: 'full' },
+  { path: '', redirectTo: '/signin', pathMatch: 'full' },
   { path: 'home',  component: HomeComponent },
   { path: 'signin',  component: SigninComponent },
   { path: 'signin/post',  component: SigninComponent },

@@ -21,9 +21,15 @@
             Multiple
             <input type="file" ng2FileSelect [uploader]="uploader" multiple  /><br/>
         </div>
-<!--
-<form enctype="multipart/form-data" method="post"  action="http://api.flickr.com/services/upload/">
+<!--<form enctype="multipart/form-data" method="post"  action="http://api.flickr.com/services/upload/">
 <input type="file" name="photo"/>
+<input type="text" name="title" value=""/>
+<input type="text" name="description" value=""/>
+<input type="text" name="tags" value=""/>
+<input type="text" name="is_public" value="0"/>
+<input type="text" name="is_friend" value="1"/>
+<input type="text" name="content_type" value="1"/>
+<input type="text" name="hidden" value="2"/>
 <input type="hidden" name="api_key" value=""/>
 <input type="hidden" name="auth_token" value=""/>
 <input type="hidden" name="api_sig" value=""/>
@@ -101,7 +107,7 @@
  
         </div>
  
-    </div>
+   
  
 </div>
 
