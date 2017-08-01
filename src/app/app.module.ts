@@ -40,6 +40,7 @@ import { MyfamilyComponent } from './myfamily/myfamily.component';
 import { CreateFamilyComponent } from './create-family/create-family.component';
 import { RecipesComponent } from './recipes/recipes.component';
 import { ViewrecipesComponent } from './viewrecipes/viewrecipes.component';
+import { DeleteConfirmComponent } from './delete-confirm/delete-confirm.component';
 
 
 @NgModule({
@@ -60,7 +61,8 @@ import { ViewrecipesComponent } from './viewrecipes/viewrecipes.component';
     MyfamilyComponent,
     CreateFamilyComponent,
     RecipesComponent,
-    ViewrecipesComponent
+    ViewrecipesComponent,
+    DeleteConfirmComponent
 
   ],
   imports: [
