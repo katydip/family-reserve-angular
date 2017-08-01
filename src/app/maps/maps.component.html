@@ -19,7 +19,9 @@
           <ul class="list-group">
             <li class="list-group-item" *ngFor="let address of person.addresses">
               {{address.streetAddress}}<br/>
-              {{address.city}}, {{address.state}} {{address.zip}}
+              {{address.city}}, {{address.state}} {{address.zip}}<br/>
+              {{address.person.email}}<br/>
+              {{address.person.phoneNumber}}
             </li>
           </ul>
         </div>

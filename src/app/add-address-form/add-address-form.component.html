@@ -1,13 +1,4 @@
-<!--<ol class="breadcrumb">
-    <li><a routerLink="/home">Home</a></li>
-    <li><a routerLink="/address">Address</a></li>
-    <li class="active">Manage Address</li>
-</ol>
 
-<br/>
-<br><br><br>
-
-<a class="btn btn-primary" routerLink="/address">Return to Address</a>-->
 <div id="pagetop">
   <h1>Manage Address</h1>
 </div> 
@@ -23,32 +14,33 @@
 <form (ngSubmit)="addAddress(addressForm)"  #addressForm="ngForm" class="form-horizontal">
   <div class="form-group">
     <label for="streetAddress" class="col-sm-2 control-label">Street Address</label>
-    <div class="col-sm-10">
+    <div class="col-sm-4">
       <input ngModel #streetAddress="ngModel" type="text" class="form-control" id="streetAddress" name="streetAddress" required>
     </div>
   </div>
   <div class="form-group">
     <label for="city" class="col-sm-2 control-label">City</label>
-    <div class="col-sm-10">
+    <div class="col-sm-4">
       <input ngModel #city="ngModel" type="text" class="form-control" id="city" name="city" required>
     </div>
   </div>
   <div class="form-group">
     <label for="state" class="col-sm-2 control-label">State</label>
-    <div class="col-sm-10">
+    <div class="col-sm-4">
       <input type="text" ngModel #state="ngModel" class="form-control" id="state" name="state" required>
     </div>
   </div>
   <div class="form-group">
     <label for="zip" class="col-sm-2 control-label">ZIP</label>
-    <div class="col-sm-10">
+    <div class="col-sm-4">
       <input type="text" ngModel #zipCode="ngModel" class="form-control" id="zip" name="zipCode">
     </div>
   </div>
   
    <div class="form-group">
-    <div class="col-sm-offset-2 col-sm-10">
+    <div class="col-sm-offset-2 col-sm-4">
       <button type="submit" class="btn btn-primary">Submit</button>
+      <a class="btn btn-primary" routerLink="/profile">Return</a>
     </div>
   </div>
 </form>

@@ -45,6 +45,7 @@ import { LogoComponent } from './logo/logo.component';
 import { FooterComponent } from './footer/footer.component';
 // import { GalleryComponent } from './gallery/gallery.component';
 // import { NgxGalleryModule } from 'ngx-gallery';
+import { DeleteConfirmComponent } from './delete-confirm/delete-confirm.component';
 
 
 @NgModule({
@@ -70,6 +71,7 @@ import { FooterComponent } from './footer/footer.component';
     LogoComponent,
     FooterComponent,
     // GalleryComponent
+    DeleteConfirmComponent
 
   ],
   imports: [

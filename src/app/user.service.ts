@@ -30,7 +30,7 @@ export class UserService {
             .catch(this.handleError);
     }
 
-    getlogin(endpoint: string, record:object): Observable<object> {
+    getlogin(endpoint: string, record:object): Observable<any> {
         let apiUrl = `${this.baseloginUrl}${endpoint}`;
 
         return this.http.post(apiUrl, record)
@@ -108,7 +108,14 @@ export class UserService {
     }
 
     private extractData(res: Response) {
-        let results = res.json();
+        let results = false;
+        try{
+            results = res.json();
+        }catch(e){
+            if(res.status !== 200){
+                Observable.throw(e)
+            }
+        }
         return results || [];
     }
 
@@ -131,5 +138,11 @@ export class UserService {
         return Observable.throw(errMsg);
     }
 
+    deleteRecord(endpoint: string, id:number): Observable<object> {
+        let apiUrl = `${this.baseUrl}${endpoint}/${id}`;
+        return this.http.delete(apiUrl)
+            .map(this.extractData)
+            .catch(this.handleError);
+    }
 
 }

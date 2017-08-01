@@ -6,14 +6,46 @@
     <div id="profiledata">
       <div class="well">First Name:    <b>{{user.firstName}}</b></div>
       <div class="well">Last Name:   <b> {{user.lastName}}</b></div>
+      <div class="well">Birth Date:    <b>{{user.birthDate}}</b></div>
       <div class="well">Email:    <b>{{user.email}}</b></div>
-      <!--add a dropdown here to select your ROLE in the family?-->
+      <div class="well">Phone Number:    <b>{{user.phoneNumber}}</b></div>
       <!--<div class="well">Families: {{user.families}}</div>-->
     </div>
+
+      <table class="table table-bordered" id="dataTable" style="width:100%">
+      <thead>
+        <tr>
+          <!--<th>ID</th>-->
+          <th>Street Address</th>
+          <th>City</th>
+          <th>State</th>
+          <th>ZIP Code</th>
+          <th class="text-center">
+            <a class="btn btn-primary" [routerLink]="['/add-address-form']">New Address</a>
+          </th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr *ngFor="let address of addressEntries">
+          <!--<td>{{address.id}}</td>-->
+          <td>{{address.streetAddress}}</td>
+          <td>{{address.city}}</td>
+          <td>{{address.state}}</td>
+          <td>{{address.zipCode}}</td>
+          <td class="text-center">
+            <button (click)="deleteAddress(address.id)" class="btn btn-danger">Delete</button>
+          </td>
+          
+        </tr>
+      </tbody>
+    </table>
+    
   </div>
+ 
 </div>
 
 
- 
+  
 
 

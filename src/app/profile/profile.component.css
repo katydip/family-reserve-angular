@@ -10,8 +10,8 @@
     position: relative;
     margin: 5% auto;
     margin-left: 33%;
-    width: 500px;
-    height: 500px;
+    width: 700px;
+    /*height: 500px;*/
     background: lightgray;
     font-family: 'Roboto', sans-serif;
 
@@ -19,13 +19,16 @@
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
 }
 #profile h2 {
-
   margin: 0 0 20px 0;
   font-weight: bold;
   font-size: 28px;
   align-content: center;
 }
 
-.btn {
+.btn-default {
   margin-left: 75%;
+}
+
+.table {
+  background-color: whitesmoke;
 }

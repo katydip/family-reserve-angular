@@ -14,6 +14,7 @@ import { CreateFamilyComponent } from '../create-family/create-family.component'
 import { JoinfamilyComponent } from '../joinfamily/joinfamily.component';
 import { MyfamilyComponent } from '../myfamily/myfamily.component';
 import { AddAddressFormComponent }   from '../add-address-form/add-address-form.component';
+import { DeleteConfirmComponent }   from '../delete-confirm/delete-confirm.component';
 import { RecipesComponent } from '../recipes/recipes.component';
 import { ViewrecipesComponent } from '../viewrecipes/viewrecipes.component';
 import { RelationchartComponent } from '../relationchart/relationchart.component';
@@ -33,6 +34,7 @@ const routes: Routes = [
   { path: 'maps',  component: MapsComponent },
   { path: 'register/add', component: RegisterComponent },
   { path: 'add-address-form', component: AddAddressFormComponent },
+  { path: 'delete-confirm', component: DeleteConfirmComponent },
   { path: 'uploadphotos',  component: UploadphotosComponent },
   { path: 'profile', component: ProfileComponent },
   { path: 'profile/edit', component: EditprofileComponent },
