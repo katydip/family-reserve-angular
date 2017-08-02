@@ -21,7 +21,6 @@ export class JoinfamilyComponent implements OnInit {
 
   ngOnInit() { this.getFamily(); }
 
-//  update this route to the new one Elizabeth added
   getFamily() {
     this.userService.getRecords(`familiesJoinable/${this.user.id}`)
       .subscribe(

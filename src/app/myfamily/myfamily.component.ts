@@ -42,7 +42,7 @@ export class MyfamilyComponent implements OnInit {
     this.getMembers()
     console.log(this.userfamily)
     this.getPosts()
-    setInterval(() => { this.getPosts() }, 5000)
+    setInterval(() => { this.getPosts() }, 10000)
     this.displayPhotos()
 
   }

@@ -1,33 +1,14 @@
-<div class="stuff">
-  <h3>Select a Family to Join:</h3>
- 
+<div id="topjoin">
+  <h3 id="jointext">Select a Family to Join:</h3>
 
-<!--<div class="row">
-  <div class="col-sm-6 col-md-4">
-    <div *ngFor="let family of families" class="thumbnail">
-      <img src="http://via.placeholder.com/242x200">
-      <div class="caption">
+  <div class="container-fluid text-center">
+    <div class="row cards text-center" id="familyoptions">
+      <div *ngFor="let family of families" class="col-sm-3 col-md-3 card" id="joincard">
+        <img width="200" height="150" src="../../assets/images/family3.jpg">
         <h3>{{family.name}}</h3>
-        <p><a (click)="clickFamily(family.id)" class="btn btn-primary" role="button">Request to Join Family</a></p>
+        <p><a (click)="clickFamily(family.id)" class="btn btn-default" role="button">Request to Join Family</a></p>
+
       </div>
     </div>
   </div>
-</div>-->
-
- <div class="container-fluid">
-  <div class="row cards text-center" id="familyoptions">
-  <div *ngFor="let family of families" class="col-sm-4 col-md-3 card" id="joincard">
-      <img width="200" height="150" src="../../assets/images/family3.jpg">
-         <h3>{{family.name}}</h3>
-        <!--<p>{{family.id}}</p>-->
-     <p><a (click)="clickFamily(family.id)" class="btn btn-primary" role="button">Request to Join Family</a></p>
-
-  </div>
- </div>
- </div>
-
-
-
-
-
 </div>

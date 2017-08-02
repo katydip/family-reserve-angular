@@ -1,19 +1,18 @@
 <div id="relationpage">
 
-    <div class="row">
-      <div *ngFor="let relative1 of relatives1" class="col-md-12" id="relative1">{{relative1.firstName}} {{relative1.lastName}}</div>
+  <div id="frame">
+  <div *ngFor="let member of members" class="col-md-4" id="userphoto">
+   <div id="thepic">
+      <img width="150" height="150" src="{{member.profilePhotoId}}" class="img-rounded">
+      </div>
+      <h3>{{member.firstName}} {{member.lastName}}</h3>
     </div>
-    <!--<div class="row">
-      <div *ngFor="let relative2 of relatives2" class="col-md-6" id="relative2">{{relative2.firstName}} {{relative2.lastName}}</div>
-    </div>
-    <div class="row">
-      <div *ngFor="let relative3 of relatives3" class="col-md-4" id="relative3">{{relative3.firstName}} {{relative3.lastName}}</div>
-    </div>
-    <div class="row">
-      <div *ngFor="let relative4 of relatives4" class="col-md-1" id="relative4">{{relative4.firstName}} {{relative4.lastName}}</div>
-    </div>-->
+  </div>
 
 </div>
+
+
+
 
 
 

@@ -21,7 +21,7 @@ export class UploadphotosComponent {
   public uploader:FileUploader = new FileUploader({url: URL, method: "POST", additionalParameter: {
     api_key: "bc39f561acb94d42e4f6745fbd8f5258",
     auth_token: "72157687029607965-d4b12694250504c7",
-    api_sig: "4c7bc7f6d1572c88a94b82f669d10866"
+    api_sig: "595bb74f2e95128b4b52e9fa1b034eee"
   }});
   public hasBaseDropZoneOver:boolean = false;
   // public hasAnotherDropZoneOver:boolean = false;

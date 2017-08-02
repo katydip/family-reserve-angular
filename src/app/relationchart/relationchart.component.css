@@ -1,16 +1,28 @@
+/** {
+    border: 1px dashed red;
+}*/
 #relationpage {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
     width: 100%;
-    height: 100%;
+    height: 800px;
     margin-top: 75px;
+    background-color: gray;
+    /*background-image: url("../../assets/images/oak.jpg");*/
 
 }
-.row {
-    border: 1px solid black;
+#userphoto {
+    /*/*width: 100px;*/
+    width: 200px;
+    background-color: seashell;
+    /*border: 5px solid seashell;*/
+    margin: 20px;
+    padding-top: 10px;
 }
+#userphoto h3 {
+    color: navy;
+    font-size: 18px;
+    text-align: center;
 
-#relative1  {
-    border: 1px dotted red;
-    width: 100px;
-    height: 100px;
-    float: left;
 }

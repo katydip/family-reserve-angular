@@ -14,6 +14,12 @@
     /*justify-content: space-around;*/
     margin: 2%;
 }
+form button {
+    float: right;
+}
+form input {
+    height: 45px;
+}
 
 #memberpanelplustree {
     display: flex;
@@ -22,7 +28,7 @@
     margin-right: 5%;
 }
 #memberpanel {
-     background-color: seashell;
+     background-color: white;
 
 }
 /*.panel-heading {
@@ -30,7 +36,7 @@
 }*/
 
 #myfamjumbo {
-    background-color: seashell;
+    background-color: white;
 }
 
 #myfamjumbo form {
@@ -52,12 +58,15 @@
     padding-top: 4px;
     font-weight: bold;
 }
-
+.media-heading {
+    text-align: center;
+}
 
 #photoandrecipebox {
     display: flex;
     flex-direction: column;
     margin-left: 5%;
+    /*width: 550px;*/
 }
 #photobuttons {
     display: flex;

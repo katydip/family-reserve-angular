@@ -1,17 +1,26 @@
-#stuff {
-    /*display: flex;
-justify-content: space-between;
-flex-wrap: wrap;
-align-items: center;
-position: fixed;*/
+#topjoin {
+    display: flex;
+    /*flex-direction: row;*/
+    flex-wrap: wrap;
+    height: 600px;
+    margin-top: 75px;
+    background-image: url("../../assets/images/wood3.jpg");
+}
+#jointext {
+    text-align: center;
+	color: white;
+	font-size: 30px;
+	font-weight: bold;
+	text-shadow: 10px black;
+
 }
 
 #joincard {
-    
     border: 5px solid black;
-    width: 300px;
-    height: 300px;
-    margin: 5px;
-    margin-left: 3%;
+    width: 275px;
+    height: 275;
+    margin: 15px;
+    /*margin-left: 3%;*/
+    background-color: white;
     /*background-image: url("../../assets/images/family3.jpg");*/
 }
