@@ -40,7 +40,6 @@ import { MyfamilyComponent } from './myfamily/myfamily.component';
 import { CreateFamilyComponent } from './create-family/create-family.component';
 import { RecipesComponent } from './recipes/recipes.component';
 import { ViewrecipesComponent } from './viewrecipes/viewrecipes.component';
-import { RelationchartComponent } from './relationchart/relationchart.component';
 import { LogoComponent } from './logo/logo.component';
 import { FooterComponent } from './footer/footer.component';
 // import { GalleryComponent } from './gallery/gallery.component';
@@ -67,7 +66,6 @@ import { DeleteConfirmComponent } from './delete-confirm/delete-confirm.componen
     CreateFamilyComponent,
     RecipesComponent,
     ViewrecipesComponent,
-    RelationchartComponent,
     LogoComponent,
     FooterComponent,
     // GalleryComponent
