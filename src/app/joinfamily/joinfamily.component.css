@@ -12,11 +12,12 @@
 	font-size: 30px;
 	font-weight: bold;
 	text-shadow: 10px black;
+    padding-left: 30px;
 
 }
 
 #joincard {
-    border: 5px solid black;
+    border: 8px solid #ffe1cc;
     width: 275px;
     height: 275;
     margin: 15px;

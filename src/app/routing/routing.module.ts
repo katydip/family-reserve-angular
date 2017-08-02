@@ -17,7 +17,6 @@ import { AddAddressFormComponent }   from '../add-address-form/add-address-form.
 import { DeleteConfirmComponent }   from '../delete-confirm/delete-confirm.component';
 import { RecipesComponent } from '../recipes/recipes.component';
 import { ViewrecipesComponent } from '../viewrecipes/viewrecipes.component';
-import { RelationchartComponent } from '../relationchart/relationchart.component';
 
 
 
@@ -43,7 +42,6 @@ const routes: Routes = [
   { path: 'myfamily', component: MyfamilyComponent },
   { path: 'recipes', component: RecipesComponent },
   { path: 'viewrecipes', component: ViewrecipesComponent },
-  { path: 'relationchart', component: RelationchartComponent },
 
 
  

@@ -11,3 +11,6 @@ agm-map {
   height: 500px;
 }
 
+.panel {
+  background-color: seashell;
+}
