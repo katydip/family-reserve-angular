@@ -25,9 +25,8 @@ export class MapsComponent {
   successMessage: string;
   familyMembers;
   personAddress;
-  user = JSON.parse(localStorage.getItem("currentUser"));
-  userfamily = JSON.parse(localStorage.getItem("currentFamily"));
-
+  user = JSON.parse(localStorage.getItem("currentUser"))
+  userfamily = JSON.parse(localStorage.getItem("currentFamily"))
 
   markers: any[] = []
 
@@ -49,7 +48,6 @@ export class MapsComponent {
 
   getAddresses() {
     // console.log("local user: ", this.user)
-    // let currentFamilyID = this.user.families[0].id
     // console.log("family id: ", this.userfamily.id)
     this.userService.getRecords(`family/${this.userfamily.id}/members/`)
       .subscribe(

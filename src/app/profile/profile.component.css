@@ -1,34 +1,74 @@
 #background {
   width: 100%;
   height: 100%;
-  background-image: url("../../assets/images/tree3.jpg");
+  background-image: url("../../assets/images/wood3.jpg");
+  padding-top: 50px;
   /*opacity: 0.5;*/
 }
 
+#container {
+  display: inline-flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
 #profile {
     margin-top: 130px;
-    position: relative;
-    margin: 5% auto;
-    margin-left: 33%;
-    width: 700px;
+    margin-bottom: 50px;
+    /*position: relative;*/
+    /*margin: 5% auto;*/
+    margin-right: 5%;
+    align-items: center;
+    /*width: 700px;*/
     /*height: 500px;*/
-    background: lightgray;
-    font-family: 'Roboto', sans-serif;
+    background: #ffe1cc;
+    font-family: 'Raleway', sans-serif;
 
-    border-radius: 2px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+    /*border-radius: 2px;*/
+    /*box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);*/
 }
 #profile h2 {
-  margin: 0 0 20px 0;
   font-weight: bold;
   font-size: 28px;
-  align-content: center;
+  line-height: 50px;
+  /*text-justify: center;*/
+  text-align: center;
+  /*align-content: center;*/
+}
+
+#picture {
+  margin-left: 5%;
+}
+
+#profiledata {
+  line-height: 25px;
 }
 
 .btn-default {
-  margin-left: 75%;
+  margin-left: 80%;
 }
 
+.btn-new {
+  color: #ff6a00;
+  font-weight: bolder;
+  font-size: 16px;
+}
+
+.btn-basic {
+  color:  #cc5500;
+}
+
+.well {
+  background: seashell;
+}
 .table {
-  background-color: whitesmoke;
+  background-color: seashell;
+}
+
+.table-header th{
+  font-weight: bolder;
+  font-size: 16px;
+
 }
