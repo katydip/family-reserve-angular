@@ -3,7 +3,8 @@
     background-image: url("../../assets/images/wood3.jpg");
     /*background-color: seashell;*/
     font-family: 'Raleway', sans-serif;
-    height: 700px;
+    height: auto;
+    padding-bottom: 50px;
 
 }
 #myfamilies h2 {
@@ -25,7 +26,7 @@
 #famcards {
     border: 10px solid seashell;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     flex-wrap: wrap;
     align-items: top;
     width: 275px;

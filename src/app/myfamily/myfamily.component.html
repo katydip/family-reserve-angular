@@ -1,5 +1,5 @@
 <div class="myfamilycontent">
-        <a routerLink="/home" class="auth-link">Back to your families.</a>
+  <a routerLink="/home" class="auth-link">Back to your families.</a>
 
   <div id="memberjumboandphotos">
 
@@ -20,7 +20,7 @@
         </ul>
       </div>
       <div class="container-fluid" id="familyorgchart">
-        <img width="300" height="300" src="../../assets/images/famtree7.jpg" style="border-radius: 5px;">
+        <img width="300" height="280" src="../../assets/images/famtree7.jpg" style="border-radius: 5px;">
       </div>
     </div>
 
@@ -55,7 +55,7 @@
           <div class="panel-heading">
             <h3 class="panel-title"><b>Gallery</b></h3>
           </div>
-          <ul class="list-group" style="height:475px; overflow-y: scroll;">
+          <ul class="list-group" style="height:430px; overflow-y: scroll;">
             <li>
               <a *ngFor="let photo of photos; let i = index" href="#" class="col-sm-6 card">
              <img width="120" height="120" src="{{ photo.url }}" id="galleryimg">
@@ -66,6 +66,21 @@
             <a class="btn btn-default" routerLink="/photos">View full Gallery</a>
             <a class="btn btn-default" routerLink="/uploadphotos">Upload Photos</a>
           </div>
+
+          <div class="btn-group">
+            <button (click)="getAlbumlist()" type="button" class="btn btn-default btn-block dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
+              aria-expanded="false">
+                New? Select an Album <span class="caret"></span>
+              </button>
+            <ul class="dropdown-menu">
+              <li>
+                <a *ngFor="let album of albums" (click)="setAlbum(album.id)">{{album.title}}</a>
+
+              </li>
+
+            </ul>
+          </div>
+
         </div>
       </div>
 

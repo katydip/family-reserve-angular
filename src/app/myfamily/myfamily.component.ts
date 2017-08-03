@@ -5,7 +5,7 @@ import { FlickrService } from '../flickr.service';
 import { PhotosComponent } from '../photos/photos.component';
 import { ViewrecipesComponent } from '../viewrecipes/viewrecipes.component';
 
-import {NgForm} from '@angular/forms';
+import { NgForm } from '@angular/forms';
 import { Observable } from 'rxjs/Observable';
 
 
@@ -26,18 +26,20 @@ export class MyfamilyComponent implements OnInit {
   model$: Observable<any>;
   photos: Object;
   relatives: Object;
+  albums: any[];
+
 
 
   userfamily = JSON.parse(localStorage.getItem("currentFamily"));
   user = JSON.parse(localStorage.getItem("currentUser"));
 
 
-  constructor ( 
+  constructor(
     private userService: UserService,
     private router: Router,
-    private _flickrService: FlickrService) {}
- 
-  ngOnInit() { 
+    private _flickrService: FlickrService) { }
+
+  ngOnInit() {
     this.userfamily
     this.getMembers()
     console.log(this.userfamily)
@@ -52,13 +54,13 @@ export class MyfamilyComponent implements OnInit {
     let membersEndpoint = `family/${this.userfamily.id}/members`
     this.userService.getRecords(membersEndpoint)
       .subscribe(
-        members => this.members = members
+      members => this.members = members
       )
   }
-getRelation() {
+  getRelation() {
     this.userService.getRecords("relationType")
       .subscribe(
-        relatives => this.relatives = relatives
+      relatives => this.relatives = relatives
       )
   }
 
@@ -66,15 +68,23 @@ getRelation() {
     let postEndpoint = "post/family"
     this.userService.getRecord(postEndpoint, this.userfamily.id)
       .subscribe(
-        postcontent => this.postcontent = postcontent,
-        error => this.errorMessage = <any>error
+      postcontent => this.postcontent = postcontent,
+      error => this.errorMessage = <any>error
       )
   }
 
-  displayPhotos(){
+  displayPhotos() {
     this._flickrService.getPhotoSet()
       .subscribe(value => {
         this.photos = value;
+      });
+  }
+  
+  getAlbumlist() {
+    this._flickrService.getAlbums()
+      .subscribe(value => {
+        this.albums = value;
+        console.log(this.albums)
       });
   }
 
@@ -83,19 +93,31 @@ getRelation() {
     input.value.postedBy = { id: this.user.id }
     this.userService.addAddress("post", input.value)
       .subscribe(
-        post => { 
-          this.successMessage = "Record added succesfully"
-          this.getPosts()
-        },
-        error => this.errorMessage = <any>error
+      post => {
+        this.successMessage = "Record added succesfully"
+        this.getPosts()
+      },
+      error => this.errorMessage = <any>error
       );
+  }
+
+  setAlbum(photoSetId) {
+    // console.log(photoURL)
+    this.userService.editRecord("family",
+      {
+        id: this.userfamily.id,
+        photoSetId: this.userfamily["photoSetId"] = photoSetId
+      })
+      .subscribe(
+        () => this.displayPhotos()
+      )
+
   }
 
 
 
 }
 
-  
 
 
-  
+

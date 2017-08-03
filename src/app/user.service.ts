@@ -16,7 +16,7 @@ export class UserService {
 
     addPeople(endpoint: string, record:object): Observable<object> {
         let apiUrl = `${this.baseUrl}${endpoint}`;
-        console.log(apiUrl)
+        // console.log(apiUrl)
         return this.http.post(apiUrl, record)
             .map(this.extractData)
             .catch(this.handleError);
@@ -24,7 +24,7 @@ export class UserService {
 
     addRecord(endpoint: string, record:object): Observable<object> {
         let apiUrl = `${this.baseUrl}${endpoint}`;
-        console.log(apiUrl)
+        // console.log(apiUrl)
         return this.http.post(apiUrl, record)
             .map(this.extractData)
             .catch(this.handleError);
@@ -50,7 +50,7 @@ export class UserService {
     }
     getRecord(endpoint: string, id): Observable<any> {
         let apiUrl = `${this.baseUrl}${endpoint}/${id}`;
-        console.log(apiUrl)
+        // console.log(apiUrl)
         return this.http.get(apiUrl)
             .map(this.extractData)
             .catch(this.handleError);
@@ -58,7 +58,7 @@ export class UserService {
     editRecord(endpoint: string, record:object): Observable<object> {
         let apiUrl = `${this.baseUrl}${endpoint}`;
         // console.log(record)
-        console.log(apiUrl)
+        // console.log(apiUrl)
         this.clean(record)
         // console.log(record)
         return this.http.put(apiUrl, record)
@@ -76,7 +76,7 @@ export class UserService {
     putFamily(endpoint: string, record:object, id:number): Observable<object> {
         let apiUrl = `${this.baseUrl}${endpoint}/${id}`;
         // console.log(record)
-        console.log(apiUrl)
+        // console.log(apiUrl)
         this.clean(record)
         // console.log(record)
         return this.http.put(apiUrl, record)
@@ -87,7 +87,7 @@ export class UserService {
 
     addAddress(endpoint: string, record:object): Observable<object> {
         let apiUrl = `${this.baseUrl}${endpoint}`;
-        console.log(apiUrl)
+        // console.log(apiUrl)
         return this.http.post(apiUrl, record)
             .map(this.extractData)
             .catch(this.handleError);
@@ -100,7 +100,7 @@ export class UserService {
             postedBy: { id: userID }
         }
         let apiUrl = `${this.baseUrl}${endpoint}`;
-        console.log(apiUrl)
+        // console.log(apiUrl)
         return this.http.post(apiUrl, post)
             .map(this.extractData)
             .catch(this.handleError);

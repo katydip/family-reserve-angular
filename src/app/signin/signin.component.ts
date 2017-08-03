@@ -48,8 +48,8 @@ export class SigninComponent {
               this.router.navigate(['/home'])
              
             },
-            error =>  this.errorMessage = <any>error
-          )
+            error =>  this.errorMessage = "Incorrect login, please try again.");
+            this.user = {};
   }
 
 
@@ -92,13 +92,13 @@ export class SigninComponent {
   validationMessages = {
     'userName': {
       'required': 'User name is required.',
-      'minlength': 'User name must be at least 2 characters long.',
-      'maxlength': 'User name cannot be more than 30 characters long.'
+      // 'minlength': 'User name must be at least 2 characters long.',
+      // 'maxlength': 'User name cannot be more than 30 characters long.'
     },
     'password': {
       'required': 'Password is required.',
-      'minlength': 'Password must be at least 2 characters long.',
-      'maxlength': 'Password cannot be more than 30 characters long.'
+      // 'minlength': 'Password must be at least 2 characters long.',
+      // 'maxlength': 'Password cannot be more than 30 characters long.'
     }
   };
 

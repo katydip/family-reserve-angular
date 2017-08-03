@@ -8,35 +8,16 @@
   <div class="row cards text-center">
   <div *ngFor="let photo of photos; let i = index" class="col-md-3 card">
       <img id="stuff" width="300" height="300" src="{{ photo.url }}" >
-      <a (click)="setPhoto(photo.url)" class="btn btn-default randomClass" role="button">Make profile picture</a>
+      <a (click)="setPhoto(photo.url)" class="btn btn-default randomClass" role="button">Set profile picture</a>
   </div>
  </div>
  </div>
 
-  <a class="btn btn-default" routerLink="/uploadphotos">Upload Photos</a>
+  <a class="btn btn-default upload" routerLink="/uploadphotos">Upload Photos</a>
 
 </div>
  
 
-
-<!--attempt...-->
-<!--<div class="modal fade" id="selectedImageModal" >
-	  <div class="modal-dialog" role="document">
-	    <div class="modal-content">
-	      <div class="modal-body">
-	         <img *ngIf="selectedImage" src="{{selectedImage.url}}" >
-	      </div>
-	    </div>
-	  </div>
-	</div>
-  	<ul id="thumbnailsList">
-  	   <li *ngFor="let photo of photos" >
-  	      <img src="{{image.url}}" class="tn"
-  		  width="191" height="146"  
-  		  data-toggle="modal" data-target="#selectedImageModal"
-                  (click)=setSelectedImage(image)>
-  	   </li>
-  	</ul>-->
 
 
 

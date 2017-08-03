@@ -48,11 +48,11 @@ export class RecipesComponent implements OnInit {
              this.userService.addPost("post", "Shared a new recipe!", this.userfamily.id, this.user.id)
             .subscribe(
               () => {this.successMessage = "Record added succesfully"},
-              error => this.errorMessage = <any>error
+              error => this.errorMessage = "Something went wrong, please try again"
               // function(error){ this.errorMessage = <any>error }
             );
         },
-        error => this.errorMessage = <any>error
+        error => this.errorMessage = "Something went wrong, please try again"
       );
 
   }

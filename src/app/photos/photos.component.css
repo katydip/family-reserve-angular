@@ -9,6 +9,7 @@
     margin-top: 80px;
     font-family: 'Raleway', sans-serif;
       background-image: url("../../assets/images/wood3.jpg");
+	  padding-bottom: 50px;
       padding-top: 20px;
 }
 #stuff {
@@ -23,7 +24,11 @@
 
 .randomClass{
 	position: relative;
-	top:-55px;
-	right:-63px;
-	opacity: .8;		
+	top:-50px;
+	right:-85px;
+	opacity: .7;
+	font-size: 10px;		
+}
+.upload {
+	margin-left: 45%;
 }

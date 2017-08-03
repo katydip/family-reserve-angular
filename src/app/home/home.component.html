@@ -1,39 +1,34 @@
 <div id="fullhomepage">
-  
- <div class="container-fluid" id="homediv">
-    <div class="row cards text-center" id="myfamilies">
-       <h2>{{user.firstName}}'s Families</h2>
-       <h4 *ngIf="families[0] !== null">Select which page you wish to view</h4>
+
+  <div class="container-fluid" id="homediv">
+    <div class="text-center" id="myfamilies">
+      <h2>{{user.firstName}}'s Families</h2>
+      <h4 *ngIf="families[0] !== null">Select which page you wish to view</h4>
       <h4 *ngIf="families[0] == null">It looks like you're new here. Join or Create your group below.</h4>
 
-    <div *ngIf="families[0] !== null">
-      <div *ngFor="let family of families" class="col-sm-6 col-md-4 card" id="famcards" (click)="clickFamily(family?.id)" role="button" >
-        <h3>{{family?.name}}</h3>        
+      <div *ngIf="families[0] !== null">
+        <div *ngFor="let family of families" class="col-sm-6 col-md-4 card" id="famcards" (click)="clickFamily(family?.id)" role="button">
+          <h3>{{family?.name}}</h3>
           <!--<img width="200" height="200" src="../../assets/images/family1.jpg">-->
-      </div>
+        </div>
       </div>
     </div>
- </div>
+  </div>
 
 
-         
-    <div class="row" id="famchoice">
-      <div  class="familyaction">
-        <a href="#" class="thumbnail" [routerLink]="['/create-family']">Create Family
+
+  <div class="row" id="famchoice">
+    <div class="familyaction">
+      <a href="#" class="thumbnail" [routerLink]="['/create-family']">Create Family
         <img width="125" height="125" src="../../assets/images/phototree.jpg" alt="...">
         </a>
-      </div>
-
-      <div  class="familyaction">
-        <a href="#" class="thumbnail" [routerLink]="['/joinfamily']">Join Family
-        <img width="125" height="125" src="../../assets/images/storkart.jpg" alt="...">
-        </a>
-      </div>
     </div>
 
+    <div class="familyaction">
+      <a href="#" class="thumbnail" [routerLink]="['/joinfamily']">Join Family
+        <img width="125" height="125" src="../../assets/images/storkart.jpg" alt="...">
+        </a>
+    </div>
+  </div>
+
 </div>
-
-
-
-
-

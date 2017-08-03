@@ -46,7 +46,7 @@ export class RegisterComponent implements OnInit {
                 localStorage.setItem('currentUser', JSON.stringify(user))
                 this.router.navigate(['/home'])
             },
-            error =>  this.errorMessage = <any>error
+            error =>  this.errorMessage = "Please try again"
             )
   }
 
@@ -109,6 +109,7 @@ export class RegisterComponent implements OnInit {
     },
     'email': {
       'required': 'Email is required.',
+      'pattern': 'Invalid email format'
     }
   };
 

@@ -54,21 +54,18 @@ export class FlickrService {
     
     }
 
-    getPhotoID() {
-        let photosetUrl = "https://api.flickr.com/services/rest/?method=flickr.photosets.getPhotos&api_key=" + this.API_KEY + "&photoset_id=" + this.userfamily.photoSetId + "&user_id=" + this.user_id + "&per_page=48&format=json&nojsoncallback=1";
+     getAlbums() {
+         let albumUrl = "https://api.flickr.com/services/rest/?method=flickr.photosets.getList&api_key=" + this.API_KEY + "&user_id=" + this.user_id + "&format=json&nojsoncallback=1"
         return this._http
-            .get(photosetUrl)
+            .get(albumUrl)
             .map(res => res.json())
             .map((val) => {
                 if (val.stat === 'ok') {
-                    return val.photoset.photo.map((photo) => {
+                    return val.photosets.photoset.map((photoset) => {
                         return {
-                            farm: photo.farm,
-                            server: photo.server,
-                            id: photo.id,
-                            secret: photo.secret,
-                            // url: `https://farm${photo.farm}.staticflickr.com/${photo.server}/${photo.id}_${photo.secret}_m.jpg`,
-                            title: photo.title
+                            id: photoset.id,
+                            title: photoset.title._content
+                
                         }
                     })
                 }
@@ -79,11 +76,10 @@ export class FlickrService {
     
     }
 
-uploadPhoto(){
+// uploadPhoto(){
+
+// }
+
 
 }
 
-
-}
-
-// https://www.flickr.com/services/api/explore/flickr.photosets.addPhoto

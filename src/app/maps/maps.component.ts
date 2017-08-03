@@ -48,9 +48,9 @@ export class MapsComponent {
   }
 
   getAddresses() {
-    console.log("local user: ", this.user)
+    // console.log("local user: ", this.user)
     // let currentFamilyID = this.user.families[0].id
-    console.log("family id: ", this.userfamily.id)
+    // console.log("family id: ", this.userfamily.id)
     this.userService.getRecords(`family/${this.userfamily.id}/members/`)
       .subscribe(
         familyMembers => {
@@ -79,9 +79,9 @@ export class MapsComponent {
 
 
                   }
-                  console.log(this.addressEntries)
+                  // console.log(this.addressEntries)
                 },
-                error => console.log("we had an oops")
+                // error => console.log("we had an oops")
               )
           }
         },

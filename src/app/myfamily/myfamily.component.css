@@ -8,6 +8,7 @@
     margin-top: 80px;
     font-family: 'Raleway', sans-serif;
       background-image: url("../../assets/images/wood3.jpg");
+      padding-bottom: 50px;
       padding-top: 20px;
 }
 
@@ -20,6 +21,8 @@
 .jumbotron {
     background-color: seashell;
     border-radius: 5px;
+    padding-left: 10px;
+     padding-right: 10px;
 }
 
 .jumbotron form {
@@ -48,6 +51,9 @@ form input {
 }
 #memberpanel {
      background-color: seashell;
+     /*padding-left: 10px;
+     padding-right: 10px;*/
+     padding: 10px;
 }
 
 /*.list-group {
@@ -67,14 +73,22 @@ form input {
     display: flex;
     flex-direction: column;
     margin-left: 5%;
-    width: 25%;
-
+    width: 28%;
     /*width: 550px;*/
 }
 #photobuttons {
     display: flex;
     flex-direction: row;
     justify-content: center;
+    padding-top: 2px;
+}
+.btn-group {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding: 2px 11px 5px 11px;
+    /*padding-left: 10px;
+    padding-right: 10px;*/
 }
 
 #familyrecipebox {
@@ -103,6 +117,6 @@ form input {
 }
 #galleryimg {
     padding-bottom: 5px;
-    padding-left: -5px;
+    padding-left: -22px;
 }
 
