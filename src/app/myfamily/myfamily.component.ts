@@ -42,7 +42,7 @@ export class MyfamilyComponent implements OnInit {
   ngOnInit() {
     this.userfamily
     this.getMembers()
-    console.log(this.userfamily)
+    // console.log(this.userfamily)
     this.getPosts()
     setInterval(() => { this.getPosts() }, 10000)
     this.displayPhotos()
@@ -84,7 +84,7 @@ export class MyfamilyComponent implements OnInit {
     this._flickrService.getAlbums()
       .subscribe(value => {
         this.albums = value;
-        console.log(this.albums)
+        // console.log(this.albums)
       });
   }
 

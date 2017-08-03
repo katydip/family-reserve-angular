@@ -17,7 +17,7 @@
       <div class="form-group">
       <label for="title" class="col-sm-2 control-label">Title</label>
       <div class="col-sm-10">
-        <input ngModel type="text" class="form-control" id="title" name="title" placeholder="Recipe title" required minlength="2" maxlength="30">
+        <input ngModel type="text" class="form-control" id="title" name="title" placeholder="Recipe title" required>
         <span *ngIf="formErrors.title" class="text-danger">
             {{ formErrors.title }}
         </span>
