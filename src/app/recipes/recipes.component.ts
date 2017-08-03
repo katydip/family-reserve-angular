@@ -112,13 +112,13 @@ export class RecipesComponent implements OnInit {
     },
     'ingredients': {
       'required': 'Ingredients required.',
-    }
+    },
     // 'preps': {
     //   'required': 'Preparation required.',
     // },
-    // 'serves': {
-    //   'required': 'Serving amount required.',
-    // }
+    'serves': {
+      'required': 'Number of servings only',
+    }
   };
 
 }

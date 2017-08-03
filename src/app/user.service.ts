@@ -8,8 +8,10 @@ import 'rxjs/add/operator/map';
 @Injectable()
 export class UserService {
 
-    private baseUrl = 'https://cors-anywhere.herokuapp.com/https://familyreserve.herokuapp.com/api/'
-    private baseloginUrl = 'https://cors-anywhere.herokuapp.com/https://familyreserve.herokuapp.com/'
+    private baseUrl = 'https://familyreserve.herokuapp.com/api/'
+    private baseloginUrl = 'https://familyreserve.herokuapp.com/'
+    // private baseUrl = 'https://cors-anywhere.herokuapp.com/https://familyreserve.herokuapp.com/api/'
+    // private baseloginUrl = 'https://cors-anywhere.herokuapp.com/https://familyreserve.herokuapp.com/'
 
     constructor (private http: Http) {}
 
