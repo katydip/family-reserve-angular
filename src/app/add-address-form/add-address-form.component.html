@@ -1,46 +1,108 @@
+<!--<div id="background">
 
-<div id="pagetop">
-  <h1>Manage Address</h1>
-</div> 
+  <div class="row" id="andphoto">
 
-
-<div [ngClass]="(errorMessage)?'alert alert-danger':'alert alert-success'" role="alert" *ngIf="errorMessage || successMessage">
-    {{errorMessage}} {{successMessage}}
-    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-        <span aria-hidden="true">&times;</span>
-    </button>
-</div>
-
-<form (ngSubmit)="addAddress(addressForm)"  #addressForm="ngForm" class="form-horizontal">
-  <div class="form-group">
-    <label for="streetAddress" class="col-sm-2 control-label">Street Address</label>
-    <div class="col-sm-4">
-      <input ngModel #streetAddress="ngModel" type="text" class="form-control" id="streetAddress" name="streetAddress" required>
-    </div>
-  </div>
-  <div class="form-group">
-    <label for="city" class="col-sm-2 control-label">City</label>
-    <div class="col-sm-4">
-      <input ngModel #city="ngModel" type="text" class="form-control" id="city" name="city" required>
-    </div>
-  </div>
-  <div class="form-group">
-    <label for="state" class="col-sm-2 control-label">State</label>
-    <div class="col-sm-4">
-      <input type="text" ngModel #state="ngModel" class="form-control" id="state" name="state" required>
-    </div>
-  </div>
-  <div class="form-group">
-    <label for="zip" class="col-sm-2 control-label">ZIP</label>
-    <div class="col-sm-4">
-      <input type="text" ngModel #zipCode="ngModel" class="form-control" id="zip" name="zipCode">
-    </div>
-  </div>
+    <div id="page" class="col-med-4">
+      <h1>New Address</h1>
   
-   <div class="form-group">
-    <div class="col-sm-offset-2 col-sm-4">
-      <button type="submit" class="btn btn-primary">Submit</button>
-      <a class="btn btn-primary" routerLink="/profile">Return</a>
-    </div>
-  </div>
-</form>
+      <div [ngClass]="(errorMessage)?'alert alert-danger':'alert alert-success'" role="alert" *ngIf="errorMessage || successMessage">
+          {{errorMessage}} {{successMessage}}
+          <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+          </button>
+      </div>
+
+      <div>
+        <form (ngSubmit)="addAddress(addressForm)"  #addressForm="ngForm" class="form-horizontal">
+          <div class="form-group">
+            <label for="streetAddress" class="col-sm-2 control-label">Street Address</label>
+            <div class="col-sm-8">
+              <input ngModel #streetAddress="ngModel" type="text" class="form-control" id="streetAddress" name="streetAddress" required>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="city" class="col-sm-2 control-label">City</label>
+            <div class="col-sm-8">
+              <input ngModel #city="ngModel" type="text" class="form-control" id="city" name="city" required>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="state" class="col-sm-2 control-label">State</label>
+            <div class="col-sm-8">
+              <input type="text" ngModel #state="ngModel" class="form-control" id="state" name="state" required>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="zip" class="col-sm-2 control-label">ZIP</label>
+            <div class="col-sm-8">
+              <input type="text" ngModel #zipCode="ngModel" class="form-control" id="zip" name="zipCode">
+            </div>
+          </div>
+          
+          <div class="form-group">
+            <div class="col-sm-offset-2 col-sm-4">
+              <button type="submit" class="btn btn-default">Submit</button>
+              <a class="btn btn-return" routerLink="/profile">Return</a>
+            </div>
+          </div>
+        </form>
+      </div>
+      <div class="picture col-med-4">
+        <img  src="../../assets/images/cornermailbox.jpg" alt="...">
+      </div>  
+
+    </div> 
+  </div>  
+</div>  -->
+
+
+<div id="background">
+  <div class="row" id="andphoto">
+    <div id="page" class="col-med-4">
+      <div id="newJoe">
+        <form (ngSubmit)="addAddress(addressForm)"  #addressForm="ngForm" class="form-horizontal">
+          <h1>New Address</h1>
+          <div [ngClass]="(errorMessage)?'alert alert-danger':'alert alert-success'" role="alert" *ngIf="errorMessage || successMessage">
+            {{errorMessage}} {{successMessage}}
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="form-group">
+            <label for="streetAddress" class="col-sm-2 control-label">Street Address</label>
+            <div class="col-sm-8">
+              <input ngModel #streetAddress="ngModel" type="text" class="form-control" id="streetAddress" name="streetAddress" required>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="city" class="col-sm-2 control-label">City</label>
+            <div class="col-sm-8">
+              <input ngModel #city="ngModel" type="text" class="form-control" id="city" name="city" required>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="state" class="col-sm-2 control-label">State</label>
+            <div class="col-sm-8">
+              <input type="text" ngModel #state="ngModel" class="form-control" id="state" name="state" required>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="zip" class="col-sm-2 control-label">ZIP</label>
+            <div class="col-sm-8">
+              <input type="text" ngModel #zipCode="ngModel" class="form-control" id="zip" name="zipCode">
+            </div>
+          </div>
+          <div class="form-group">
+            <div class="col-sm-offset-2 col-sm-4">
+              <button type="submit" class="btn btn-default">Submit</button>
+              <a class="btn btn-return" routerLink="/profile">Return</a>
+            </div>
+          </div>
+        </form>
+        <div class="picture col-med-4">
+          <img height="250px" src="../../assets/images/cornermailbox.jpg" alt="Image of Mailbox">
+        </div>
+      </div>
+    </div> 
+  </div>  
+</div>  

@@ -1,3 +1,42 @@
-#pagetop {
-    padding-top: 100px;
+#background {
+  background-image: url("../../assets/images/wood3.jpg");
+  padding-top: 50px;
 }
+#page {
+    padding-top: 50px;
+    margin-top: 130px;
+    margin-bottom: 300px;
+    margin-left: 5%;
+    align-items: left;
+    font-family: 'Raleway', sans-serif;
+}
+#page h1 {
+  font-weight: bolder;
+  font-size: 28px;
+  line-height: 50px;
+  text-align: center;
+}
+.btn-return {
+    color:  #cc5500;
+    font-weight: bolder
+}
+.btn-default {
+    background-color: #ff6a00;
+    color: #ff6a00;
+    font-weight: bolder;
+}
+#andphoto {
+    width: 100%;
+}
+#newJoe{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-around;
+    align-items: center;
+}
+form{
+    width: 600px;
+    background: seashell;
+}
+

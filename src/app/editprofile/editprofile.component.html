@@ -1,73 +1,76 @@
-<section id="editprofile">
+<div id="background">
+  <div id="container">
+    <section id="editprofile">
+      <a routerLink="/profile" class="auth-link">Return to Profile</a>
+      <h1>Manage Profile</h1>
 
-    <a routerLink="/profile" class="auth-link">Return to Profile</a>
-
-
-  <h1>Manage Profile</h1>
-
-  <div [ngClass]="(errorMessage)?'alert alert-danger':'alert alert-success'" role="alert" *ngIf="errorMessage || successMessage">
-      {{errorMessage}} {{successMessage}}
-      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-      </button>
-  </div>
-
- 
-    <form (ngSubmit)="saveProfile(user.id)"  #profileForm="ngForm" class="form-horizontal">
-    <input [(ngModel)]="user.id" #id="ngModel" type="hidden" name="id">
-    <div class="form-group">
-      <label for="firstName" class="col-sm-2 control-label">First Name</label>
-      <div class="col-sm-10">
-        <input [(ngModel)]="user.firstName" #first_name="ngModel" type="text" class="form-control" id="firstName" name="firstName" placeholder="First Name" required minlength="2" maxlength="30">
-          <span *ngIf="formErrors.firstName" class="text-danger">
-            {{ formErrors.firstName }}
-          </span>
+      <div [ngClass]="(errorMessage)?'alert alert-danger':'alert alert-success'" role="alert" *ngIf="errorMessage || successMessage">
+          {{errorMessage}} {{successMessage}}
+          <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+          </button>
       </div>
-    </div>
-    <div class="form-group">
-      <label for="lastName" class="col-sm-2 control-label">Last Name</label>
-      <div class="col-sm-10">
-        <input [(ngModel)]="user.lastName" type="text" class="form-control" id="lastName" name="lastName"  placeholder="Last Name" required minlength="2" maxlength="30">
-          <span *ngIf="formErrors.lastName" class="text-danger">
-            {{ formErrors.lastName }}
-          </span>
-      </div>
-    </div>
+    
+      <form (ngSubmit)="saveProfile(user.id)"  #profileForm="ngForm" class="form-horizontal">
+        <input [(ngModel)]="user.id" #id="ngModel" type="hidden" name="id">
+        <div class="form-group">
+          <label for="firstName" class="col-sm-2 control-label">First Name</label>
+          <div class="col-sm-10">
+            <input [(ngModel)]="user.firstName" #first_name="ngModel" type="text" class="form-control" id="firstName" name="firstName" placeholder="First Name" required minlength="2" maxlength="30">
+              <span *ngIf="formErrors.firstName" class="text-danger">
+                {{ formErrors.firstName }}
+              </span>
+          </div>
+        </div>
 
-    <div class="form-group">
-      <label for="birthDate" class="col-sm-2 control-label">Birth Date</label>
-      <div class="col-sm-10">
-        <input [(ngModel)]="user.birthDate" type="text" class="form-control" id="birthDate" name="birthDate">
-          <span *ngIf="formErrors.birthDate" class="text-danger">
-            {{ formErrors.birthDate }}
-          </span>
-      </div>
-    </div>
+        <div class="form-group">
+          <label for="lastName" class="col-sm-2 control-label">Last Name</label>
+          <div class="col-sm-10">
+            <input [(ngModel)]="user.lastName" type="text" class="form-control" id="lastName" name="lastName"  placeholder="Last Name" required minlength="2" maxlength="30">
+              <span *ngIf="formErrors.lastName" class="text-danger">
+                {{ formErrors.lastName }}
+              </span>
+          </div>
+        </div>
 
-    <div class="form-group">
-      <label for="email" class="col-sm-2 control-label">Email</label>
-      <div class="col-sm-10">
-        <input [(ngModel)]="user.email" type="text" class="form-control" id="email" name="email"  placeholder="Email" required minlength="2" maxlength="30">
-          <span *ngIf="formErrors.email" class="text-danger">
-            {{ formErrors.email }}
-          </span>
-      </div>
-    </div>
+        <div class="form-group">
+          <label for="birthDate" class="col-sm-2 control-label">Birth Date</label>
+          <div class="col-sm-10">
+            <input [(ngModel)]="user.birthDate" type="text" class="form-control" id="birthDate" name="birthDate" placeholder="YYYY-MM-DD">
+              <span *ngIf="formErrors.birthDate" class="text-danger">
+                {{ formErrors.birthDate }}
+              </span>
+          </div>
+        </div>
 
-    <div class="form-group">
-      <label for="phoneNumber" class="col-sm-2 control-label">Phone Number</label>
-      <div class="col-sm-10">
-        <input [(ngModel)]="user.phoneNumber" type="text" class="form-control" id="phoneNumber" name="phoneNumber" >
-          <span *ngIf="formErrors.phoneNumber" class="text-danger">
-            {{ formErrors.phoneNumber }}
-          </span>
-      </div>
-    </div>
-     
-    <div class="form-group">
-      <div class="col-sm-offset-2 col-sm-10">
-          <button [disabled]="!profileForm.form.valid" type="submit" class="btn btn-primary">Submit Changes</button>
-      </div>
-    </div>
-  </form>
-</section>
+        <div class="form-group">
+          <label for="email" class="col-sm-2 control-label">Email</label>
+          <div class="col-sm-10">
+            <input [(ngModel)]="user.email" type="text" class="form-control" id="email" name="email"  placeholder="Email" required minlength="2" maxlength="30">
+              <span *ngIf="formErrors.email" class="text-danger">
+                {{ formErrors.email }}
+              </span>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="phoneNumber" class="col-sm-2 control-label">Phone Number</label>
+          <div class="col-sm-10">
+            <input [(ngModel)]="user.phoneNumber" type="text" class="form-control" id="phoneNumber" name="phoneNumber" placeholder="800-555-1212">
+              <span *ngIf="formErrors.phoneNumber" class="text-danger">
+                {{ formErrors.phoneNumber }}
+              </span>
+          </div>
+        </div>
+        
+        <div class="form-group">
+          <div class="col-sm-offset-2 col-sm-10">
+              <button [disabled]="!profileForm.form.valid" type="submit" class="btn btn-new">Submit Changes</button>
+          </div>
+        </div>
+      </form>
+    </section>
+    <div id="picture">
+      <img  src="../../assets/images/old-photos-400x266.jpg" alt="Old photo of a boy">
+  </div>  
+</div>  
