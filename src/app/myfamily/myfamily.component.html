@@ -6,9 +6,9 @@
     <div id="memberpanelplustree">
       <div class="panel" id="memberpanel">
         <div class="panel-heading">
-          <h3 class="panel-title">Your family</h3>
+          <h3 class="panel-title"><b>Your family</b></h3>
         </div>
-        <ul class="list-group" style="height:500px; overflow-y: scroll;">
+        <ul class="list-group" style="height:520px; overflow-y: scroll;">
           <li>
             <div *ngFor="let member of members" class="list-group-item">
               <div class="row">
@@ -35,7 +35,7 @@
             <input name="content" ngModel required #content="ngModel" class="form-control" placeholder="What would you like to share?...">
             <button>Post</button>
           </form>
-          <ul class="list-group" style="height:520px; overflow-y: scroll;">
+          <ul class="list-group" style="height:535px; overflow-y: scroll;">
             <li>
               <a *ngFor="let post of postcontent" href="#" class="list-group-item">
                 <div class="row">{{post.postedBy.firstName}} {{post.postedBy.lastName}} on {{post.postDate}}:</div>
@@ -53,7 +53,7 @@
       <div id="photopage">
         <div class="panel">
           <div class="panel-heading">
-            <h3 class="panel-title"><b>Gallery</b></h3>
+            <h3 class="panel-title" id="galpanel"><b>Gallery</b></h3>
           </div>
           <ul class="list-group" style="height:430px; overflow-y: scroll;">
             <li>

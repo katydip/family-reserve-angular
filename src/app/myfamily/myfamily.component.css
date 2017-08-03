@@ -1,15 +1,18 @@
 /** {
     border: 1px dashed red;
 }*/
-.panel {
-    background-color: seashell;
-}
+
 .myfamilycontent {
     margin-top: 80px;
     font-family: 'Raleway', sans-serif;
-      background-image: url("../../assets/images/wood3.jpg");
-      padding-bottom: 50px;
-      padding-top: 20px;
+    background-image: url("../../assets/images/wood3.jpg");
+    padding-bottom: 50px;
+    padding-top: 20px;
+}
+.auth-link {
+	color: white; 
+	text-decoration-style: none;
+	padding: 50px;
 }
 
 #memberjumboandphotos {
@@ -18,11 +21,12 @@
     /*justify-content: space-around;*/
     margin: 2%;
 }
+/*newsfeed section */
 .jumbotron {
     background-color: seashell;
     border-radius: 5px;
     padding-left: 10px;
-     padding-right: 10px;
+    padding-right: 10px;
 }
 
 .jumbotron form {
@@ -42,39 +46,52 @@ form button {
 form input {
     height: 45px;
 }
+#postcontent {
+    font-size: 16px;
+    padding-top: 4px;
+    font-weight: bold;
+}
 
+.media-heading {
+    text-align: center;
+}
+/*end of newsfeed section*/
+
+/*left panel with member list */
 #memberpanelplustree {
     display: flex;
     flex-direction: column;
     width: 25%;
     margin-right: 5%;
 }
+.panel {
+    background-color: seashell;
+}
 #memberpanel {
      background-color: seashell;
      /*padding-left: 10px;
      padding-right: 10px;*/
-     padding: 10px;
+     padding: 10px 10px 0px 0px;
 }
+#familyorgchart {
+    height: auto;
+    width: 100%;
+    margin-top: 5px;
+    /*margin-bottom: 0;*/
+}
+/*end of left panel with member list */
 
-/*.list-group {
-    padding-left: 2%;
-    padding-right: 2%;
-}*/
-#postcontent {
-    font-size: 16px;
-    padding-top: 4px;
-    font-weight: bold;
-}
-.media-heading {
-    text-align: center;
-}
 
+/*right side panel */
 #photoandrecipebox {
     display: flex;
     flex-direction: column;
     margin-left: 5%;
-    width: 28%;
+    width: 25%;
     /*width: 550px;*/
+}
+#galpanel {
+    padding: 10px 0px 10px 5px;
 }
 #photobuttons {
     display: flex;
@@ -92,31 +109,20 @@ form input {
 }
 
 #familyrecipebox {
-    margin-top: 10px;
+    margin-top: 5px;
 }
-#boxphoto #recipebuttons #treebutton {
+#boxphoto #recipebuttons {
     display: flex;
     flex-direction: row;
     justify-content: center;
 }
 
- #photothumbnails {
-     height: 500px;
- }
-
-
-#familyorgchart {
-    height: auto;
-    width: 100%;
-    /*margin-bottom: 0;*/
-}
-.auth-link {
-	color: white; 
-	text-decoration-style: none;
-	padding: 50px;
-}
-#galleryimg {
+ #galleryimg {
     padding-bottom: 5px;
     padding-left: -22px;
 }
+/*end of right side panel */
+
+
+
 
